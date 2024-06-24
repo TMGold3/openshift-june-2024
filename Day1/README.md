@@ -440,3 +440,20 @@ oc get deploy,rs,po
 
 Expected output
 ![openshift](output3.png)
+
+## Lab - Creating a nginx deployment using bitnami/nginx container image from Docker Hub Remote Registry
+```
+oc project jegan
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3
+oc get deploy,rs,po
+oc get po -w
+```
+
+Listing the pod with their IP and node where they are deployed
+```
+oc get po -o wide
+```
+
+Expected output
+![openshift](output4.png)
+![openshift](output5.png)
