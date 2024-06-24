@@ -276,6 +276,7 @@ Expected output
 
 ## Info - What is Deployment?
 <pre>
+- stateless application are deployed as Deployment into Kubernetes/Openshift
 - When we run the command 'oc create deployment nginx --image=bitnami/nginx --replicas=3' it creates the following in the openshift cluster
   - a Deployment resource
     - a replicaset resource
