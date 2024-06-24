@@ -98,4 +98,33 @@ Expected output
   - Podman is a Container Engine which depends on CRI-O Container runtime
 </pre>
 
-## Info - Container Orchestration Platforms
+## Info - Docker Overview
+<pre>
+- is developed in Golang by Docker Inc organzation
+- comes in 2 flavours
+  1. Community Edition - Docker CE ( Free )
+  2. Enterprise Edition - Docker EE ( Paid )
+- follow Client/Server Architecture
+- in most cases, when we create containers they provide us root access irrespective of whether you are administrator or not
+</pre>
+
+## Info - Podman Overview
+
+## Info - Container Orchestration Platforms Overview
+<pre>
+- though containerized application workloads can be managed manually, in real-world application companies don't manage containers directly/manually
+- generally every organization uses Container Orchestration Platforms to manage their containerized application workloads
+- Examples
+  - Docker SWARM
+  - Google Kubernetes
+  - Red Hat Openshift
+  - AWS - Kubernetes Managed Service called EKS (Elastic Kubernetes Service)
+  - Azure - Kubernetes Managed Service called AKS (Azure Kuberentes Service )
+  - AWS - Red Hat Managed Openshift service called ROSA
+  - Azure - Red Hat Managed Openshift service called ARO
+
+#### Docker SwARM
+<pre>
+- Docker SWARM is Docker Inc  
+</pre>
+</pre>
