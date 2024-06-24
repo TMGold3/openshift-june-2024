@@ -230,5 +230,14 @@ Expected output
 ## Info - Pod Overview
 <pre>
 - Pod is a group of related containers 
+- Pod is the smallest unit that can be deployed within Kubernetes/Openshift
+- Pod is a resource stored and managed within etcd database by API Server
+- Pod never runs anywhere,only  the container within them runs in worker or master nodes
+- One Pod can container any number of containers
+- Best practice is, 
+  - only one main application should run per Pod
+  - one Pod must represent a single application or a single application component ( microservice, webserver, app server, db server, etc.,)
 - when we deploy our applications into Kubernetes/Openshift, they run inside a container which is part of a Pod
+- In case of docker, every running container gets an IP address, but in Kubernetes/Openshift IP address is assigned only on the Pod level not on the container level
+
 </pre>
