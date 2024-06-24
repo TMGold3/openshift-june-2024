@@ -669,4 +669,9 @@ Points to note
 - In case, you wish to use LoadBalancer external service in a bare-metal openshift cluster, we need to install metallb operator as an Openshift Administrator
 - Post installing metallb operator, we need to allocate some available IP address range for the purpose of metall b load balancer
 - We also need to create a metallb controller instance by creating a metallb instance 
+- In Kubernetes/Openshift, there is a pod called kube-proxy which runs in every node
+- kube-proxy provides load-balancing functionality for the clusterip and nodeport services
+- In case of Load Balancer service, an external balancer with static ip accessible over internet is assigned for the external load balancer instance created in aws/azure/gcp, etc.,
+- the metallb operator spins-off a load-balancer locally within the openshift cluster supporting a similar loadbalancing just like the public clouds
+  
 </pre>
