@@ -273,3 +273,19 @@ Expected output
 - ReplicaSet Controller creates so many Pods as mentioned in the desiredCount of the ReplicaSet
 - ReplicaSet Controller is also reponsible for scale up/down
 </pre>
+
+## Info - What is Deployment?
+<pre>
+- When we run the command 'oc create deployment nginx --image=bitnami/nginx --replicas=3' it creates the following in the openshift cluster
+  - a Deployment resource
+    - a replicaset resource
+      - Pod 1
+        - pause container ( running in worker-1 node )
+        - nginx container ( running in worker-1 node )
+      - Pod 2
+        - pause container ( running in worker-2 node )
+        - nginx container ( running in worker-2 node )
+      - Pod 3
+        - pause container ( running in master-2 node )
+        - nginx container ( running in master-2 node )
+</pre>
