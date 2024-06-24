@@ -69,3 +69,26 @@ Expected output
   - containers has own port range ( 0 - 65535 ) just like virtual machines
 - containers will never be able to replace virtual machine as virtual machine runs an Operating System, while container runs a single application
 </pre>
+
+## Info - Container Runtime Overview
+<pre>
+- low-level software to manage container images and containers
+- not user-friendly
+- generally not used by end-users
+- examples
+  - CRI-O Container Runtime
+  - runC container runtime
+</pre>
+
+## Info - Container Engine Overview
+<pre>
+- high-level software used to manage containers and images
+- very user-friendly
+- without knowing low-level container related kernel knowledge we can easily manage containers
+- internally container engines depend on Container Runtime to manage containers and images
+- Examples
+  - Docker is a Container Engine which depends on containerd which in turn depends on runC container runtime
+  - Podman is a Container Engine which depends on CRI-O Container runtime
+</pre>
+
+## Info - Container Orchestration Platforms
