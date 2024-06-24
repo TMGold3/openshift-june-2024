@@ -290,3 +290,16 @@ Expected output
         - pause container ( running in master-2 node )
         - nginx container ( running in master-2 node )
 </pre>
+
+## Lab - Listing the Openshift 
+```
+oc get nodes
+kubectl get nodes
+
+kubectl get nodes -o wide
+oc get nodes -o wide
+```
+
+Expected output
+![openshift](nodes1.png)
+![openshift](nodes2.png)
