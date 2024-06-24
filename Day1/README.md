@@ -382,4 +382,4 @@ oc project jegan
 ```
 
 Expected output
-![openshift](project5.png)
+![openshift](project4.png)
