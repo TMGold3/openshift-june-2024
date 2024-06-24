@@ -383,3 +383,35 @@ oc project jegan
 
 Expected output
 ![openshift](project4.png)
+
+## Lab - Create your first deployment in imperative style
+```
+oc project jegan
+oc project
+oc create deployment nginx --image=nginx:latest --replicas=3
+```
+
+Listing the deployments in the active project
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+Listing the replicasets in the active project
+```
+oc get replicasets
+oc get replicaset
+oc get rs
+```
+
+Listing the pods in the active project
+```
+oc get pods
+oc get pod
+oc get po
+```
+
+Expected output
+![openshift](output1.png)
+![openshift](output2.png)
