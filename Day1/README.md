@@ -506,3 +506,25 @@ exit
 Expected output
 ![openshift](output10.png)
 ![openshift](output11.png)
+
+## Lab - Developer testing using port-foward ( not recommended in production )
+
+The below command is a blocking command, hence to access the web page you need to open another terminal tab
+```
+oc get po
+oc port-forward nginx-566b5879cb-cqcsz 9090:8080
+```
+In the above command, port 9090 is open on the local machine, while 8080 is the Pod container port where nginx is listening.  So when we access http://localhost:9090 the call is forwarded to pod container port 8080.
+
+
+In a different terminal tab, you can try this ( this only works on your local linux machine )
+```
+curl http://127.0.0.1:9090
+curl http://localhost:9090
+```
+
+To come out of the port-forward, you need to press Ctrl + C
+
+Expected output
+![openshift](output12.png)
+![openshift](output13.png)
