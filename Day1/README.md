@@ -239,5 +239,8 @@ Expected output
   - one Pod must represent a single application or a single application component ( microservice, webserver, app server, db server, etc.,)
 - when we deploy our applications into Kubernetes/Openshift, they run inside a container which is part of a Pod
 - In case of docker, every running container gets an IP address, but in Kubernetes/Openshift IP address is assigned only on the Pod level not on the container level
-
 </pre>
+
+Expected output
+![pod](pod1.png)
+![pod](pod2.png)
