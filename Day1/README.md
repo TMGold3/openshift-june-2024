@@ -366,3 +366,20 @@ oc new-project jegan
 
 Expected output
 ![openshift](project3.png)
+
+## Lab - Finding the currently active project
+```
+oc project
+```
+
+Expected output
+![openshift](project4.png)
+
+## Lab - Switching between projects
+```
+oc project default
+oc project jegan
+```
+
+Expected output
+![openshift](project5.png)
