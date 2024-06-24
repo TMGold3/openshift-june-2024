@@ -415,3 +415,12 @@ oc get po
 Expected output
 ![openshift](output1.png)
 ![openshift](output2.png)
+
+## Lab - Troubleshooting the Pod CrashLoopBackoff issue
+Let's try to understand why the Pod is crashing
+```
+oc logs nginx-56fcf95486-85bzw
+```
+
+Expected output
+![openshift](log1.png)
