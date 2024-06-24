@@ -424,3 +424,10 @@ oc logs nginx-56fcf95486-85bzw
 
 Expected output
 ![openshift](log1.png)
+
+In Kubernetes, the Pod containers can run with/without admin privileges.  Hence, the Kubernetes cluster will not enforce best practices.
+
+In Openshift, the openshift nodes are installed with Red Hat Enterprise Core OS (RHCOS). The RHCOS operating system enforces the best practices are always followed, when the container images doesn't the best practices it won't let the Pod run due to the violations.
+
+In Openshift regular application is supposed to run with non-adminstrator privileges. Hence, not all folders are writable.  In this the docker image that we used is not prepared keep openshift guidelines in mind.  Hence, not all docker images will work in openshift, but the same docker image will work perfectly fine in Kubernetes.
+
