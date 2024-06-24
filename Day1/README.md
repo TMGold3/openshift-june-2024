@@ -635,3 +635,14 @@ Expected output
 ![openshift](output25.png)
 ![openshift](output26.png)
 ![openshift](output27.png)
+
+Points to note
+<pre>
+- Kubernetes & Openshift reserves port 30000-32767 port range for the purpose of nodeport external service
+- Hence, when we create nodeport service any one of the ports on the above range will be randomly picked by Kubernetes/Openshift
+- the single Nodeport picked by Openshift is opened on the nodes in the openshift cluster
+- each nodeport service, it is going to open one port on every node, so the more nodeport services we creates it ends up opening more number of ports in the openshift cluster, this might lead to security issues
+- also the way we access the nodeport service is neither developer friendly nor end-user friendly
+- In openshift, we could use route to make a service available outside the cluster scope which kind of addreses all the nodeport issues we discussed earlier
+</pre>
+
