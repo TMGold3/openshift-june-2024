@@ -529,11 +529,12 @@ Expected output
 ![openshift](output12.png)
 ![openshift](output13.png)
 
-## Lab - Exposing an application only within the cluster in production
+## Lab - Exposing an application only within the cluster
 
 #### When to use ClusterIP Internal Service?
 <pre>
 - A clusterip service is an internal service
+- this type of service can be used in dev,qa and production
 - For instance, you have a mysql database deployment with muliple pods that needs to accessed from some microservice pod, you can expose the mysql as a clusterip service
 - Normally for all db deployment, it is exposed as clusterip services as they are only supposed to accessed within openshift cluster not exposed to the end users
 </pre>
