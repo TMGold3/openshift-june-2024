@@ -600,3 +600,38 @@ Expected output
 ![openshift](output19.png)
 ![openshift](output20.png)
 ![openshift](output21.png)
+
+
+## Lab - Creating a nodeport external service for nginx deployment in imperative sytle
+
+First, let's delete the existing clusterip internal service
+```
+oc get svc
+oc delete svc/nginx
+oc get svc
+```
+
+Let's create the nodeport external service
+```
+oc expose deploy/nginx --type=NodePort --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+Let's access the nodeport service
+```
+oc get nodes
+curl http://master-1.ocp4.tektutor.org.labs:31504
+curl http://master-2.ocp4.tektutor.org.labs:31504
+curl http://master-3.ocp4.tektutor.org.labs:31504
+curl http://worker-1.ocp4.tektutor.org.labs:31504
+curl http://worker-2.ocp4.tektutor.org.labs:31504
+```
+
+Expected output
+![openshift](output22.png)
+![openshift](output23.png)
+![openshift](output24.png)
+![openshift](output25.png)
+![openshift](output26.png)
+![openshift](output27.png)
