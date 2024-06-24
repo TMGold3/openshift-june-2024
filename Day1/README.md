@@ -584,10 +584,16 @@ Expected output
 ## Info - What is service discovery in Kubernetes/Openshift?
 <pre>
 - accessing a service by its name
-- In Kubernetes/Openshift, we have DNS Pods, whose job is translate the service name into its respective service IP address
+- In Kubernetes/Openshift, we have DNS Pods, whose job is to translate the service name into its respective service IP address
 - In each pod, there will be file called /etc/resolv.conf
-- When the pod containers are created by kubelet container agent running on every node, it also configures the /etc/resolv.conf with the openshift dns service IP, which helps in resolving the service name to its respective Ip address.
+- When the pod containers are created by kubelet container agent running on every node, it also configures the /etc/resolv.conf with the openshift dns service IP, which helps in resolving the service name to its respective Ip address
+- the nameserver IP address we see 172.30.0.10 is the dns-default service IP, which represents a group of dns pods( one pod per node )
 </pre>
+
+Finding the dns service IP address
+```
+oc get svc -n openshift-dns
+```
 
 Expected output
 ![openshift](output18.png)
