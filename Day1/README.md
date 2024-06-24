@@ -155,6 +155,8 @@ Expected output
 - Kubernetes Dashboard ( webconsole - it is basic - it poses some security issues, so the first thing administrators does is to disable this )
 </pre>
 
+
+
 #### Red Hat Openshift
 <pre>
 - is developed on top of Google Kubernetes
@@ -177,6 +179,13 @@ Expected output
 - controller managers (Pod)
 - scheduler (Pod)
 </pre>
+
+## Google Kubernetes - High Level Architecture
+![openshift](K8sArchitecture.png)
+
+
+## Red Hat Openshift - High Level Architecture
+![openshift](openshiftArchitecture.png)
 
 #### API Server
 <pre>
