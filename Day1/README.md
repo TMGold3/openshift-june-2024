@@ -683,3 +683,4 @@ https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift
 
 ![openshift](output28.png)
 ![openshift](output29.png)
+![openshift](output30.png)
