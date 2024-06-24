@@ -431,3 +431,12 @@ In Openshift, the openshift nodes are installed with Red Hat Enterprise Core OS 
 
 In Openshift regular application is supposed to run with non-adminstrator privileges. Hence, not all folders are writable.  In this the docker image that we used is not prepared keep openshift guidelines in mind.  Hence, not all docker images will work in openshift, but the same docker image will work perfectly fine in Kubernetes.
 
+
+## Lab - Deleting a deployment from your project
+```
+oc delete deploy/nginx
+oc get deploy,rs,po
+```
+
+Expected output
+![openshift](output3.png)
