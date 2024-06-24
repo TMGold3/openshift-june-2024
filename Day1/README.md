@@ -312,6 +312,20 @@ Expected output
 - Using Openshifit projects we can give access only the team members while denying access to other users
 </pre>
 
+## Info - What is an Openshift Operator?
+<pre>
+- Kubernetes/Openshift allows adding new functionalities by creating custom resources
+- Custom Resources can be added to Kubernetes/Openshift by creating Custom Resource Definitions (CRD)
+- In order to manage our Custom Resources, we also need to add Custom Controllers
+- As we know, each Controller manages one type of Resource, hence the already existing controllers will have no knowledge about our Custom Resources, hence we need to provide our own Controller
+- The combination of Custom Resources and Custom Controller is referred as Operators
+- This is supported in both Kubernetes and Openshift
+- Example
+  - We installed Metallb operator to support LoadBalancer service in bare-metal openshift cluster
+  - The metallb operator would have installed many new resources to our cluster
+  - The metallb operator would have also installed controllers to manage the custom metallb resources
+</pre>
+
 ## Lab - Listing the Openshift nodes
 ```
 oc get nodes
