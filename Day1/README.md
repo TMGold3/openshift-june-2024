@@ -646,3 +646,27 @@ Points to note
 - In openshift, we could use route to make a service available outside the cluster scope which kind of addreses all the nodeport issues we discussed earlier
 </pre>
 
+## Lab - Creating a load balancer external service for nginx deployment in imperative style
+We need to delete the existing nodeport external service
+```
+oc get svc
+oc delete svc/nginx
+oc get svc
+```
+
+Let's create the load balancer service for nginx deployment
+```
+oc expose deploy/nginx --type=LoadBalancer --port=8080
+oc get svc
+oc describe svc
+```
+In the above output, you would have noticed that the external ip is pending.
+
+Points to note
+<pre>
+- LoadBalancer service  is used in public cloud environments like AWS, GCP, Azure, Digital Ocean, etc.,
+- It is not normally used in local bare metal openshift setup like ours
+- In case, you wish to use LoadBalancer external service in a bare-metal openshift cluster, we need to install metallb operator as an Openshift Administrator
+- Post installing metallb operator, we need to allocate some available IP address range for the purpose of metall b load balancer
+- We also need to create a metallb controller instance by creating a metallb instance 
+</pre>
