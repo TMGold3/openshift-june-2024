@@ -106,9 +106,16 @@ Expected output
   2. Enterprise Edition - Docker EE ( Paid )
 - follow Client/Server Architecture
 - in most cases, when we create containers they provide us root access irrespective of whether you are administrator or not
+- Docker supports rootless containers
 </pre>
 
 ## Info - Podman Overview
+<pre>
+- is a container engine which internally depends on CRI-O Container Runtime
+- Red Hat Openshift supported Docker(run-C) until v3.11
+- Red Hat Openshift supports only CRI-O container runtime and Podman within Red Hat Openshift
+- Red Hat Openshift v4.x onwards Docker and other container runtime support is removed
+</pre>
 
 ## Info - Container Orchestration Platforms Overview
 <pre>
@@ -125,6 +132,95 @@ Expected output
 
 #### Docker SwARM
 <pre>
-- Docker SWARM is Docker Inc  
+- Docker SWARM is Docker Inc native Container Orchestration Platform
+- it supports managing only Docker containerized application workloads
+- it is light weight setup, hence we can install this in a laptop with even a basic configuration
+- it is easy to install, learn
+- it is not production-grade, generally used for learning purpose, can be used in dev/qa environment
 </pre>
+
+
+#### Google Kubernetes
+<pre>
+- developed by Google in Golang
+- robust container orchestration platform
+- supports many different types of container runtimes including runc, containerd, CRI-O, etc.,
+- it also supports adding additional functionality by adding your own Custom Resource and custom controllers
+- to extend Kubernetes, we can develop an Kubernetes Operator and add new functionalities
+- Operators => is a combination of many Custom Resource + Custom Controllers
+- is opensource
+- supports command-line interface only
+- time tested and robust can be used in Production
+- Kubernetes Dashboard ( webconsole - it is basic - it poses some security issues, so the first thing administrators does is to disable this )
+</pre>
+
+#### Red Hat Openshift
+<pre>
+- is developed on top of Google Kubernetes
+- Red Hat developed many operators and extended Kubernetes to support many practical features required by IT industry
+- Red Hat supports 
+  - User Management ( Role Based Access Control - RBAC )
+  - Comes with Internal Container Registry
+  - Comes with S2I
+    - We can deploy application from source code grabbed from Version control softwares ( Not supported in K8s )
+    - We build and deploy application from within Openshift
+  - CI/CD Platform
+  - Supports Virtualization
+  - Routes - allows us expose our application with a friendly public url
+</pre>
+
+## Red Hat Openshift - Control Plane Components
+<pre>
+- API Server (Pod)
+- etcd key-value data-store (Pod)
+- controller managers (Pod)
+- scheduler (Pod)
+</pre>
+
+#### API Server
+<pre>
+- support REST APIs for every feature supported in Kubernetes/Openshift
+- the entire status and application status is stored in the etcd database by the API Server
+- no components in Openshift talk to each other directly
+- API Server is the only componenent which can udpate the etcd database
+- all openshift components they only communicate with API Server via REST calls
+- any time the API Server updates the etcd database it will send a broadcasting event
+  - Examples
+    - new deployment created
+    - new replicaset created
+    - new pod created
+    - scaled up
+    - scaled down
+    - deployment updated
+    - deployment delete
+</pre>
+
+#### etcd
+<pre>
+- key-value database
+- this stores the application and cluster status
+- if we backup the etcd, it is very easy to restore the same cluster else where
+- opensource, independent project which can be used outside the scope of kubernetes/openshift
+</pre>
+
+#### controller managers
+<pre>
+- a group of many controller which provides monitoring
+- each controller manages one type of resource in Kubernetes/Openshift
+- Deployment Controller manages Deployment resource
+- ReplicaSet Controller manages ReplicaSet resource
+- Examples
+  - Deployment Controller
+  - ReplicaSet controller
+  - StatefulSet controller
+  - Job Controller
+  - CronJob Controller
+  - Endpoint Controller
+  - DaemonSet Controller
+</pre>
+
+#### scheduler
+<pre>
+- this components recommends on which node a newly created Pod can be deployed  
+- scheduler can deploy a pod directly, hence it sends its scheduling recommendations to API Server via REST calls
 </pre>
