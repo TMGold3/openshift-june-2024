@@ -300,7 +300,7 @@ Expected output
 - Using Openshifit projects we can give access only the team members while denying access to other users
 </pre>
 
-## Lab - Listing the Openshift 
+## Lab - Listing the Openshift nodes
 ```
 oc get nodes
 kubectl get nodes
