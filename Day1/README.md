@@ -313,3 +313,15 @@ oc describe node//master-1.ocp4.tektutor.org.labs
 Expected output
 ![openshift](nodes3.png)
 ![openshift](nodes4.png)
+
+## Lab - Using explain command to know api details and definition of any resource in Openshift/Kubernetes
+```
+oc explain node
+oc explain deployment
+oc explain replicaset
+oc explain pod
+```
+
+Expected output
+![openshift](nodes5.png)
+![openshift](nodes6.png)
