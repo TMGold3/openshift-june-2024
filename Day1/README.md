@@ -70,6 +70,13 @@ Expected output
 - containers will never be able to replace virtual machine as virtual machine runs an Operating System, while container runs a single application
 </pre>
 
+## Info - Is it possible to run multiple application within a container?
+<pre>
+- Yes, it is possible to run multiple applications in a container
+- How docker or podman let's you run multiple applications inside a container is, the main container will run a utility called supervisord which will spin separate process to run the applications and the supervisord monitors the health and status of the child processes, which is a overhead, hence though it works it is not a recommnended best practice
+- recommendation is, one application per container
+</pre>  
+
 ## Info - Container Runtime Overview
 <pre>
 - low-level software to manage container images and containers
