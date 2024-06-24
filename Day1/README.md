@@ -580,3 +580,14 @@ curl http://172.30.226.252:8080
 Expected output
 ![openshift](output16.png)
 ![openshift](output17.png)
+
+## Info - What is service discovery in Kubernetes/Openshift?
+<pre>
+- accessing a service by its name
+- In Kubernetes/Openshift, we have DNS Pods, whose job is translate the service name into its respective service IP address
+- In each pod, there will be file called /etc/resolv.conf
+- When the pod containers are created by kubelet container agent running on every node, it also configures the /etc/resolv.conf with the openshift dns service IP, which helps in resolving the service name to its respective Ip address.
+</pre>
+
+Expected output
+![openshift](output18.png)
