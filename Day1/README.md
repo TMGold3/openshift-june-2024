@@ -562,3 +562,21 @@ oc describe svc/nginx
 Expected output
 ![output](output14.png)
 ![output](output15.png)
+
+
+Accessing the clusterip service from a Pod that belongs to a different deployment
+```
+oc create deployment hello --image=tektutor/spring-ms:1.0
+oc get po -w
+```
+
+Get inside the hello pod shell
+```
+oc rsh deploy/hello
+curl http://nginx:8080
+curl http://172.30.226.252:8080
+```
+
+Expected output
+![openshift](output16.png)
+![openshift](output17.png)
