@@ -222,5 +222,5 @@ Expected output
 #### scheduler
 <pre>
 - this components recommends on which node a newly created Pod can be deployed  
-- scheduler can deploy a pod directly, hence it sends its scheduling recommendations to API Server via REST calls
+- scheduler can't deploy a pod directly, hence it sends its scheduling recommendations to API Server via REST calls
 </pre>
