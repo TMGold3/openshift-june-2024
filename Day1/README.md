@@ -225,3 +225,10 @@ Expected output
 - this components recommends on which node a newly created Pod can be deployed  
 - scheduler can't deploy a pod directly, hence it sends its scheduling recommendations to API Server via REST calls
 </pre>
+
+
+## Info - Pod Overview
+<pre>
+- Pod is a group of related containers 
+- when we deploy our applications into Kubernetes/Openshift, they run inside a container which is part of a Pod
+</pre>
