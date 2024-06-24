@@ -65,4 +65,7 @@ Expected output
   - just like Virtual machines acquire their own IP, containers also get their own IP usually (Private IPs)
   - just like Virtual machines has a Network Card, containers also has a network card
   - just like Virtual machines has their own Network stack, containers also has their own network stack
+  - containers has a file system just like virtual machine
+  - containers has own port range ( 0 - 65535 ) just like virtual machines
+- containers will never be able to replace virtual machine as virtual machine runs an Operating System, while container runs a single application
 </pre>
