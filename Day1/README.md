@@ -303,3 +303,13 @@ oc get nodes -o wide
 Expected output
 ![openshift](nodes1.png)
 ![openshift](nodes2.png)
+
+## Lab - Describe node to find more details about node
+```
+oc get nodes
+oc describe node//master-1.ocp4.tektutor.org.labs
+```
+
+Expected output
+![openshift](nodes3.png)
+![openshift](nodes4.png)
