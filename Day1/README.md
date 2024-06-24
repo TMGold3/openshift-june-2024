@@ -676,6 +676,10 @@ Points to note
 </pre>
 
 ## Lab - Installing Metallb Operator as a Openshift administrator
+For detailed instructions on how to install Metallb operator in Openshift, you may refer my medium blog
+<pre>
+https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35  
+</pre>
 
 ![openshift](output28.png)
 ![openshift](output29.png)
