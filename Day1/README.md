@@ -673,5 +673,9 @@ Points to note
 - kube-proxy provides load-balancing functionality for the clusterip and nodeport services
 - In case of Load Balancer service, an external balancer with static ip accessible over internet is assigned for the external load balancer instance created in aws/azure/gcp, etc.,
 - the metallb operator spins-off a load-balancer locally within the openshift cluster supporting a similar loadbalancing just like the public clouds
-  
 </pre>
+
+## Lab - Installing Metallb Operator as a Openshift administrator
+
+![openshift](output28.png)
+![openshift](output29.png)
