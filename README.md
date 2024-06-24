@@ -22,4 +22,5 @@ Second Half - Tea break: 4:15 to 4:30 pm
 - While registering for the pre-test, you may use your personal email not the BOFA id
 - You don't have to share your Date of Birth, you don't have to turn on the camera
 - Once you have completed the pre-test, kindly notify either via chat or you can tell me
+- Once everyone completes the test, we will start the training
 </pre>
