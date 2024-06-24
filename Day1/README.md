@@ -561,3 +561,4 @@ oc describe svc/nginx
 
 Expected output
 ![output](output14.png)
+![output](output15.png)
