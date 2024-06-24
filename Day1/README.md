@@ -34,6 +34,12 @@ Expected output
 - the virtualization software is of two types
   1. Type 1 - Bare Metal Hypervisor ( Installed in Servers/Workstations )
   2. Type 2 - Installed in Laptops/Desktops/Workstations
+- this is considered heavy-weight virtualization as each Virtual Machine has to allocated with dedicated hardware resources
+  - CPU Cores
+  - RAM
+  - Disk Storage
+  - Grapics Card ( Virtual )
+  - Network Card ( virtual )
 - Examples
   - VMWare vSphere/vCenter - Type 1 Hypervisor ( Bare Metal ) - Commercial Product
   - VMWare Workstation - Type 2 - Linux/Windows - commercial product
@@ -42,4 +48,21 @@ Expected output
   - KVM - Type 2 - works in all Linux Distributions
   - Parallels - Type 2 - works in Mac
   - Hyper-V - Type 2 - works in Windows Server grade OS
+</pre>
+
+## Info - Containerization
+<pre>
+- is an application virtualization technology
+- each container represents one application process
+- container are not operating sysytem, they don't their own OS Kernel
+- each container either represents one fully function application or a application component
+  - application component ( database server, web server, application server, etc., )
+  - application - CRM, etc.,
+    - an application might requires more than one container in some cases
+- light-weight virtualization technology
+  - containers doesn't require dedicated hardwares as they use the hardware resources available on the host operating system
+- there are some similaries between containers and virtual machines
+  - just like Virtual machines acquire their own IP, containers also get their own IP usually (Private IPs)
+  - just like Virtual machines has a Network Card, containers also has a network card
+  - just like Virtual machines has their own Network stack, containers also has their own network stack
 </pre>
