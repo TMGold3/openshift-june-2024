@@ -7,6 +7,13 @@ git clone https://github.com/tektutor/openshift-june-2024.git
 cd openshift-june-2024
 ```
 
+## Tea & Lunch break Schedules
+<pre>
+Morning Tea break - 11:15 to 11:30 am
+Lunch break - 1:15 to 2:00 pm
+Second Half - Tea break: 4:15 to 4:30 pm
+</pre> 
+
 
 # Kindly proceed with the pre-test
 <pre>
