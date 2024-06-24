@@ -180,6 +180,9 @@ Expected output
 - scheduler (Pod)
 </pre>
 
+## Docker - High Level Architecture
+![openshift](DockerHighLevelArchitecture.png)
+
 ## Google Kubernetes - High Level Architecture
 ![openshift](K8sArchitecture.png)
 
