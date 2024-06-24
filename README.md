@@ -1,5 +1,13 @@
 # Red Hat Openshift 2024 (24 June to 28 June 2024)
 
+## Cloning this Training Repository
+```
+cd ~
+git clone https://github.com/tektutor/openshift-june-2024.git
+cd openshift-june-2024
+```
+
+
 # Kindly proceed with the pre-test
 <pre>
 - You can reset your RPS cloud password to rps@123
