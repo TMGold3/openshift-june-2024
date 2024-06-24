@@ -457,3 +457,37 @@ oc get po -o wide
 Expected output
 ![openshift](output4.png)
 ![openshift](output5.png)
+
+
+## Lab - Getting inside the nodes where your application pod is running to understand some internal stuffs
+```
+oc get nodes
+oc get po -o wide
+oc debug node/master-3.ocp4.tektutor.org.labs
+
+chroot /host
+
+podman version
+crictl version
+```
+
+List all container images present in the master 3 node
+```
+crictl images
+```
+
+List all containers running in the master node
+```
+crictl ps
+```
+
+List all containers that belong to a specific pod
+```
+crictl ps | grep nginx-566b5879cb-cqcsz
+```
+
+Expected output
+![openshift](output6.png)
+![openshift](output7.png)
+![openshift](output8.png)
+![openshift](output9.png)
