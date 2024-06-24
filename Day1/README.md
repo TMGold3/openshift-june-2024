@@ -129,6 +129,7 @@ Expected output
   - Azure - Kubernetes Managed Service called AKS (Azure Kuberentes Service )
   - AWS - Red Hat Managed Openshift service called ROSA
   - Azure - Red Hat Managed Openshift service called ARO
+</pre>
 
 #### Docker SwARM
 <pre>
