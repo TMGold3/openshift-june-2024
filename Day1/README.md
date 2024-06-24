@@ -491,3 +491,18 @@ Expected output
 ![openshift](output7.png)
 ![openshift](output8.png)
 ![openshift](output9.png)
+
+## Lab - Getting inside a Pod shell
+```
+oc get deploy,po
+oc rsh deploy/nginx
+
+oc exec -it nginx-566b5879cb-kj8rd sh
+hostname
+hostname -i
+exit
+```
+
+Expected output
+![openshift](output10.png)
+![openshift](output11.png)
