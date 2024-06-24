@@ -325,3 +325,13 @@ oc explain pod
 Expected output
 ![openshift](nodes5.png)
 ![openshift](nodes6.png)
+
+
+## Lab - Listing yaml definition of a specific node
+```
+oc get node/master-1.ocp4.tektutor.org.labs -o yaml
+```
+
+Expected output
+![openshift](nodes7.png)
+![openshift](nodes8.png)
