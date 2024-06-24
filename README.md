@@ -1,5 +1,10 @@
 # Red Hat Openshift 2024 (24 June to 28 June 2024)
 
+## Kindly provide your first day feedback
+<pre>
+https://survey.zohopublic.com/zs/InDHab  
+</pre>
+
 ## Cloning this Training Repository
 ```
 cd ~
