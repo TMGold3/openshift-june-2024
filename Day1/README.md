@@ -357,3 +357,12 @@ oc get namespace
 Expected output
 ![openshift](project1.png)
 ![openshift](project2.png)
+
+
+## Lab - Create a new project in your name
+```
+oc new-project jegan
+```
+
+Expected output
+![openshift](project3.png)
