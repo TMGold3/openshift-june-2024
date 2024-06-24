@@ -291,6 +291,15 @@ Expected output
         - nginx container ( running in master-2 node )
 </pre>
 
+## Info - openshift project
+<pre>
+- Kubernetes supports something called namespace
+- Kubernetes/openshift are generally shared by many teams within the organization
+- Using namespace we can segregate the applications deployment by one team from the other teams
+- Openshift has introduced a new feature called projects, which is based on namespace
+- Using Openshifit projects we can give access only the team members while denying access to other users
+</pre>
+
 ## Lab - Listing the Openshift 
 ```
 oc get nodes
@@ -335,3 +344,16 @@ oc get node/master-1.ocp4.tektutor.org.labs -o yaml
 Expected output
 ![openshift](nodes7.png)
 ![openshift](nodes8.png)
+
+## Lab - Listing all project namespaces in openshift
+```
+oc get projects
+oc get namespaces
+
+oc get project
+oc get namespace
+```
+
+Expected output
+![openshift](project1.png)
+![openshift](project2.png)
