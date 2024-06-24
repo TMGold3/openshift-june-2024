@@ -591,3 +591,5 @@ Expected output
 
 Expected output
 ![openshift](output18.png)
+![openshift](output19.png)
+![openshift](output20.png)
