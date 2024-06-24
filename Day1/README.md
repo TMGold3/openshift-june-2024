@@ -241,6 +241,18 @@ Expected output
 - In case of docker, every running container gets an IP address, but in Kubernetes/Openshift IP address is assigned only on the Pod level not on the container level
 </pre>
 
+Creating a pod with plain docker
+```
+docker run -d --name nginx_pause --hostname nginx gcr.io/google_containers/pause:latest
+docker run -d --name nginx --network=container:nginx_pause nginx:latest
+docker ps
+docker inspect -f {{.NetworkSettings.IPAddress}} nginx_pause
+docker exec -it nginx sh
+hostname -i
+exit
+```
+In the above, both the nginx_pause container and the nginx containers share the IP address.
+
 Expected output
 ![pod](pod1.png)
 ![pod](pod2.png)
