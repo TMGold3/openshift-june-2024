@@ -256,3 +256,20 @@ In the above, both the nginx_pause container and the nginx containers share the 
 Expected output
 ![pod](pod1.png)
 ![pod](pod2.png)
+
+
+## Info - What is ReplicaSet ?
+<pre>
+- Let's say 1000s of users are trying a access a web hosted in a single Pod
+- a single Pod instance won't be able to server 1000s of users, hence we may need to add more instances of the Pod
+- to create and manage multiple Pod instances of a single application, Kubernetes/Openshift supports something called ReplicaSet
+- ReplicaSet is a resource which is stored in etcd database
+  - the container image that must be used to create containers under the Pod
+  - it has desiredCount - tells how many Pod instances the user expects to run in Openshift
+  - it has currentPod - tells how many Pod instances are actually running in the openshift 
+  - it has availabe/ready Pod - tells how many Pod are in ready state to server end-users
+- ReplicaSet is created by Deployment Controller
+- ReplicaSet is accepted as an input by the ReplicaSet Controller
+- ReplicaSet Controller creates so many Pods as mentioned in the desiredCount of the ReplicaSet
+- ReplicaSet Controller is also reponsible for scale up/down
+</pre>
