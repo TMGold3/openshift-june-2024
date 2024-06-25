@@ -147,10 +147,19 @@ Expected output
 
 
 ## Lab - Deploying Angular application into openshift using Docker strategy cloning source from GitHub
+#### What does the below command do?
+<pre>
+- The below command will deploy angularjs application into openshift by cloning the source code from GitHub repo
+- navigates to Day2/angular/Angular-openshift-example folder
+- since we have mentioned docker strategy, it looks for Dockerfile under Day2/angular/Angular-openshift-example folder
+- Openshift creates a buildconfig with the Dockerfile, the output of the buildconfig will be a docker image which will get pushed into Openshift internal container registry
+- Using the newly build image, it automatically deploys the application and creates a service for the deployment
+- We need to manually create a route to access the application from outside the cluster
+</pre>
 ```
 oc project jegan
 
-oc new-app --name=angular https://github.com/tektutor/openshift-june-2024.git --context-dir=Day2/angular//Angular-openshift-example --strategy=docker
+oc new-app --name=angular https://github.com/tektutor/openshift-june-2024.git --context-dir=Day2/angular/Angular-openshift-example --strategy=docker
 
 oc expose svc/angular
 oc get buildconfigs
