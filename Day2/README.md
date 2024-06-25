@@ -114,3 +114,61 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b789032-2aca-436b-b41c-d7081bb653b6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/87d0c5ca-b11d-4987-9f0b-71cb2f8bd7d4)
 
+## Info - Subnet
+<pre>
+- If we take IPV4 IP addresses it is 32 bits(4 bytes)
+- It has 4 Octets
+  - A.B.C.D
+  - A is 1 Byte(8 bits)
+  - B is 1 Byte(8 bits)
+  - C is 1 Byte(8 bits)
+  - D is 1 Byte(8 bits)
+- Consider this Subnet - 10.128.0.0/24 ( 256 IP Addresses are supported )
+- What is IP Address in the above Subnet
+  - 10.128.0.0
+  - 10.128.0.1
+  - 10.128.0.2 
+  - ...
+  - 10.128.0.255
+- The 24 in 10.128.0.0/24 indicates how many bits from left to right are fixed
+
+- From the subnet 10.244.0.0/16 compute 5 Subnets for master-1, master-2,master-3, worker-1 and worker-2 nodes
+  - Master 1 - Subnet ( 10.244.1.0/24 )
+  - Master 2 - Subnet ( 10.244.2.0/24 )
+  - Master 3 - Subnet ( 10.244.3.0/24 )
+  - Worker 1 - Subnet ( 10.244.4.0/24 )
+  - Worker 2 - Subnet ( 10.244.5.0/24 )
+</pre>
+
+## Info - Private IP
+<pre>
+- Private IP are accessible only on the same machine   
+</pre>
+
+
+## Lab - Deploying Angular application into openshift using Docker strategy cloning source from GitHub
+#### What does the below command do?
+<pre>
+- The below command will deploy angularjs application into openshift by cloning the source code from GitHub repo
+- navigates to Day2/angular/Angular-openshift-example folder
+- since we have mentioned docker strategy, it looks for Dockerfile under Day2/angular/Angular-openshift-example folder
+- Openshift creates a buildconfig with the Dockerfile, the output of the buildconfig will be a docker image which will get pushed into Openshift internal container registry
+- Using the newly build image, it automatically deploys the application and creates a service for the deployment
+- We need to manually create a route to access the application from outside the cluster
+</pre>
+```
+oc project jegan
+
+oc new-app --name=angular https://github.com/tektutor/openshift-june-2024.git --context-dir=Day2/angular/Angular-openshift-example --strategy=docker
+
+oc expose svc/angular
+oc get buildconfigs
+oc logs -f bc/angular
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/01682a92-f5af-4f28-b09c-55220ffb7a26)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/029e0902-cab0-47ac-b4bf-d4ccb7a71fb4)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fe8c73ba-28b6-426b-87de-c8d2a34424a4)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9c6764af-16ee-4ba5-a1fc-4dd55e537d07)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/18b2fe4a-aa0a-4943-a14a-888d98759789)
