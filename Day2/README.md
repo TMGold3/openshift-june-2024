@@ -54,6 +54,10 @@ curl http://tektutor.apps.ocp4.tektutor.org.labs/nginx
 curl http://tektutor.apps.ocp4.tektutor.org.labs/hello
 ```
 
+The domain must match with the registered domain in ingress controller
+```
+oc describe ingresscontroller default -n openshift-ingress-operator | grep Domain
+```
 
 #### Points to note
 <pre>
@@ -73,4 +77,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d1a56e1e-f134-4000-85ff-de6dcffbbb1b)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0a0e955e-01c6-45de-82ba-4d981ca55bc4)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7f08d052-2874-4119-9a86-90b50cc3fc20)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e0f936cd-a587-4a10-b782-78dda61886ca)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b789032-2aca-436b-b41c-d7081bb653b6)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/84e80f3d-1ea2-43c1-a2ca-599602466a0f)
 
