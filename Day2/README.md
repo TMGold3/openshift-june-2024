@@ -1,5 +1,38 @@
 # Day 2
 
+## Info - SOLID Design Principle
+<pre>
+S - Single Responsibility Principle (SRP)
+O - Open Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Seggregation
+D - Dependency Injection or Dependency Inversion or Inversion of Control(IOC)
+</pre>
+
+#### Single Reponsibility Principle 
+<pre>
+- One component should do just one thing
+- One component should represent a single entity/object
+</pre>
+
+## Info - ReplicationController
+<pre>
+- In older versions of Kubernetes, stateless application were deployed as ReplicationController
+- ReplicationController supports
+  - Rolling update
+  - Scale up/down
+- ReplicationController doesn't support declaratively performing scale up/down
+- ReplicationController doesn't support declaratively performing rolling update
+- For these reasons, latest versions of Kubernetes, they introducted Deployment & ReplicaSet as an alternate to ReplicationController
+- Deployment supports rolling update
+- ReplicaSet supports scale up/down
+- Deployment supports declaratively performing rolling update and scale up/down
+- In Openshift, before the Deployment and ReplicaSet was introducted, they wanted to support scale up/down and rolling updte in declarative style, hence they created DeploymentConfig
+- DeploymentConfig internally used ReplicationController
+- Once the Deployment & ReplicaSet was introduced in Kubernetes, Openshift deprecated the use of DeploymentConfig
+- Hence, new application deployment should avoid using DeploymentConfig and ReplicationController.  Instead, we should consider using Deployment & ReplicaSet
+</pre>
+
 ## Lab - Create a public url using route for deployment
 ```
 oc get deploy
@@ -54,6 +87,10 @@ curl http://tektutor.apps.ocp4.tektutor.org.labs/nginx
 curl http://tektutor.apps.ocp4.tektutor.org.labs/hello
 ```
 
+The domain must match with the registered domain in ingress controller
+```
+oc describe ingresscontroller default -n openshift-ingress-operator | grep Domain
+```
 
 #### Points to note
 <pre>
@@ -73,4 +110,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d1a56e1e-f134-4000-85ff-de6dcffbbb1b)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0a0e955e-01c6-45de-82ba-4d981ca55bc4)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7f08d052-2874-4119-9a86-90b50cc3fc20)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e0f936cd-a587-4a10-b782-78dda61886ca)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b789032-2aca-436b-b41c-d7081bb653b6)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/87d0c5ca-b11d-4987-9f0b-71cb2f8bd7d4)
 
