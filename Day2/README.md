@@ -144,3 +144,22 @@ Expected output
 <pre>
 - Private IP are accessible only on the same machine   
 </pre>
+
+
+## Lab - Deploying Angular application into openshift using Docker strategy cloning source from GitHub
+```
+oc project jegan
+
+oc new-app --name=angular https://github.com/tektutor/openshift-june-2024.git --context-dir=Day2/angular//Angular-openshift-example --strategy=docker
+
+oc expose svc/angular
+oc get buildconfigs
+oc logs -f bc/angular
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/01682a92-f5af-4f28-b09c-55220ffb7a26)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/029e0902-cab0-47ac-b4bf-d4ccb7a71fb4)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fe8c73ba-28b6-426b-87de-c8d2a34424a4)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9c6764af-16ee-4ba5-a1fc-4dd55e537d07)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/18b2fe4a-aa0a-4943-a14a-888d98759789)
