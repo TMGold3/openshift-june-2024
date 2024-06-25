@@ -1,5 +1,38 @@
 # Day 2
 
+## Info - SOLID Design Principle
+<pre>
+S - Single Responsibility Principle (SRP)
+O - Open Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Seggregation
+D - Dependency Injection or Dependency Inversion or Inversion of Control(IOC)
+</pre>
+
+#### Single Reponsibility Principle 
+<pre>
+- One component should do just one thing
+- One component should represent a single entity/object
+</pre>
+
+## Info - ReplicationController
+<pre>
+- In older versions of Kubernetes, stateless application were deployed as ReplicationController
+- ReplicationController supports
+  - Rolling update
+  - Scale up/down
+- ReplicationController doesn't support declaratively performing scale up/down
+- ReplicationController doesn't support declaratively performing rolling update
+- For these reasons, latest versions of Kubernetes, they introducted Deployment & ReplicaSet as an alternate to ReplicationController
+- Deployment supports rolling update
+- ReplicaSet supports scale up/down
+- Deployment supports declaratively performing rolling update and scale up/down
+- In Openshift, before the Deployment and ReplicaSet was introducted, they wanted to support scale up/down and rolling updte in declarative style, hence they created DeploymentConfig
+- DeploymentConfig internally used ReplicationController
+- Once the Deployment & ReplicaSet was introduced in Kubernetes, Openshift deprecated the use of DeploymentConfig
+- Hence, new application deployment should avoid using DeploymentConfig and ReplicationController.  Instead, we should consider using Deployment & ReplicaSet
+</pre>
+
 ## Lab - Create a public url using route for deployment
 ```
 oc get deploy
