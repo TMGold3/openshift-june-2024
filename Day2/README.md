@@ -23,6 +23,38 @@ Expected output
 
 ## Lab - Ingress
 
+In case you haven't already deployed nginx, you need to deploy nginx as shown below
+```
+oc project jegan
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
+oc expose deploy/nginx --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+In case you haven't already deployed hello, you need to deploy hello microservice as shown below
+```
+oc project jegan
+oc create deployment hello --image=tektutor/hello:4.0 --replicas=3
+oc expose deploy/hello --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+Now let's create the ingress forwarding rules to the above services based on path /nginx or /hello.
+```
+cd ~/openshift-june-2024
+git pull
+cd Day2/ingress
+cat ingress.yml
+oc apply -f ingress.yml
+oc get ingress
+oc describe ingress/tektutor
+curl http://tektutor.apps.ocp4.tektutor.org.labs/nginx
+curl http://tektutor.apps.ocp4.tektutor.org.labs/hello
+```
+
+
 #### Points to note
 <pre>
 - Ingress is a set of forwarding rules
