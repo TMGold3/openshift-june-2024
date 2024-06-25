@@ -11,4 +11,4 @@ curl http://hello-jegan.apps.ocp4.tektutor.org.labs
 ```
 
 Expected output
-![openshift](route1.png)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ee1fd71d-c191-4905-bd06-a0847d10d594)
