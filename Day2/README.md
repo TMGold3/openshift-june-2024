@@ -114,3 +114,33 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b789032-2aca-436b-b41c-d7081bb653b6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/87d0c5ca-b11d-4987-9f0b-71cb2f8bd7d4)
 
+## Info - Subnet
+<pre>
+- If we take IPV4 IP addresses it is 32 bits(4 bytes)
+- It has 4 Octets
+  - A.B.C.D
+  - A is 1 Byte(8 bits)
+  - B is 1 Byte(8 bits)
+  - C is 1 Byte(8 bits)
+  - D is 1 Byte(8 bits)
+- Consider this Subnet - 10.128.0.0/24 ( 256 IP Addresses are supported )
+- What is IP Address in the above Subnet
+  - 10.128.0.0
+  - 10.128.0.1
+  - 10.128.0.2 
+  - ...
+  - 10.128.0.255
+- The 24 in 10.128.0.0/24 indicates how many bits from left to right are fixed
+
+- From the subnet 10.244.0.0/16 compute 5 Subnets for master-1, master-2,master-3, worker-1 and worker-2 nodes
+  - Master 1 - Subnet ( 10.244.1.0/24 )
+  - Master 2 - Subnet ( 10.244.2.0/24 )
+  - Master 3 - Subnet ( 10.244.3.0/24 )
+  - Worker 1 - Subnet ( 10.244.4.0/24 )
+  - Worker 2 - Subnet ( 10.244.5.0/24 )
+</pre>
+
+## Info - Private IP
+<pre>
+- Private IP are accessible only on the same machine   
+</pre>
