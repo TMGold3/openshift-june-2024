@@ -270,6 +270,12 @@ Expected output
 ![pod](pod2.png)
 
 
+## Info - Pod and container states
+You may refer the official documention here
+<pre>
+https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+</pre>
+
 ## Info - What is ReplicaSet ?
 <pre>
 - Let's say 1000s of users are trying a access a web hosted in a single Pod
