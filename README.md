@@ -11,6 +11,9 @@ For a completely functional local openshift cluster, you may go for CRC(Code Rea
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e99411f8-8026-4ddc-b717-94e48150d7b0)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a8777839-e8f2-465f-997e-1bd154d56ec8)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/844d1cc1-4f58-4987-ad14-63a470a6b9e2)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/22c51c16-d094-4196-868f-e4c0ae7562cb)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/03b871e0-a313-4b2a-b68a-dd9fb04a5949)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5044ce2d-8849-497d-bb09-783f244211cd)
 
 
 
