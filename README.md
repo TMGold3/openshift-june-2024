@@ -6,10 +6,12 @@ https://developers.redhat.com/products/openshift-local/getting-started
 </pre> 
 
 For a completely functional local openshift cluster, you may go for CRC(Code Ready Containers) setup in Windows, Mac or Linux
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ccdaa335-6ed5-4dc3-81ec-65f751bfad2b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d492abc4-a9a2-4a14-9756-3ddd0da73c5a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e99411f8-8026-4ddc-b717-94e48150d7b0)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e99411f8-8026-4ddc-b717-94e48150d7b0)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f4486064-2188-431c-a499-04c20896059a)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e99411f8-8026-4ddc-b717-94e48150d7b0)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a8777839-e8f2-465f-997e-1bd154d56ec8)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/844d1cc1-4f58-4987-ad14-63a470a6b9e2)
+
 
 
 ## Kindly provide your first day feedback
