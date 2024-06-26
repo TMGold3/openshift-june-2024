@@ -458,3 +458,28 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/38f58f4a-9534-4564-830b-7fd4887364bc)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/17ae51ef-4dbe-4692-8962-ba03f92e560b)
 
+## Lab - Deploying redis with persistent volume
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/redis
+showmount -e
+cat redis-pv.yml
+cat redis-pvc.yml
+cat redis-deploy.yml
+
+oc apply -f redis-pv.yml
+oc apply -f redis-pvc.yml
+oc apply -f redis-deploy.yml
+
+oc get po
+oc logs redis-c7bf8bd5-xf2ng
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/27102492-2cc0-40ef-924e-7ea4e1f5a166)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d2319149-fcb0-4839-8b0d-843e63d27c67)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/423700be-fba8-427d-a3da-7fad59462282)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/25185f5d-3d5f-4419-b9fb-eb1c13fd2a81)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/31fbef8c-6a0c-4c83-a682-67cdc7a9443d)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3df214fc-6708-4254-a7a6-b89586686eda)
