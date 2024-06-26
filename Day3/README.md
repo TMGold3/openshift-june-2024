@@ -29,6 +29,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e107fbac-8e3b-49d0-a7a6-e8982eceb60a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e4e562de-b97e-4df9-8474-00f4bb099238)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6606a937-fda4-4a12-b30d-d07bbbadf8cc)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f1812aca-fc0b-4686-8042-3b1704848a38)
 
 ## Lab - Deploying application using existing docker image
 ```
