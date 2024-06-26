@@ -21,6 +21,7 @@ curl http://http://openshift-june-2024-jegan.apps.ocp4.tektutor.org.labs
 ```
 
 Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/96e93ddb-e675-49c2-ba2e-e0e2220a203f)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7cd5cccc-832d-421e-8421-45c447168098)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/04747539-6f13-4f31-8660-d6996abbcfa5)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fc06f716-fe60-4f29-82e4-dcefe901b910)
@@ -153,7 +154,87 @@ oc get po -w
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a2ce399c-5e42-4534-88df-9ca8858f3705)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/18876cb4-04df-4c32-b789-41fd12cfeccf)
 
+## Lab - Creating clusterip internal service in declarative style
 
+First let's delete any existing deployments, replicasets, pod in declarative style
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f pod.yml
+oc delete -f nginx-rs.yml
+oc delete -f nginx-deploy.yml
+oc get all
+```
+
+Let's now create then nginx deployment in declarative style and create a clusterip internal service also in declarative style
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+
+oc create -f nginx-deploy.yml
+oc expose deploy/nginx --type=ClusterIP --port=8080 -o yaml --dry-run=client
+oc expose deploy/nginx --type=ClusterIP --port=8080 -o yaml --dry-run=client > nginx-clusterip-svc.yml
+oc create -f nginx-clusterip-svc.yml
+oc get svc
+oc get describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8afb1344-5a88-4856-b986-e613f54578d1)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/91bb435c-9db9-4404-b46b-943a219efb08)
+
+
+## Lab - Creating a nodeport external service in declarative style
+
+First we need to delete the nginx clusterip service
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f nginx-clusterip-svc.yml
+oc get svc
+```
+
+Let's create the nodeport service for existing nginx deployment
+```
+oc get deploy
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client > nginx-nodeport-svc.yml
+oc create -f nginx-nodeport-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f86dd9b4-200d-475c-9820-4e82c5211a6e)
+
+## Lab - Creating a loadbalancer service for existing nginx deployment in declararive style
+
+First we need to delete existing nodeport service
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f nginx-nodeport-svc.yml
+oc get svc
+```
+
+Let's create the loadbalancer service for nginx deployment in declarative style 
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc expose deploy/nginx --port=8080 --type=LoadBalancer -o yaml --dry-run=client
+oc expose deploy/nginx --port=8080 --type=LoadBalancer -o yaml --dry-run=client > nginx-lb-svc.yml
+oc create -f nginx-lb-svc.yml
+oc get svc
+curl http://192.168.122.90:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/31522aef-e3f7-4752-b601-45db57700a87)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4b9eb459-ed5b-4e16-8c6e-1cff20e2bc9a)
