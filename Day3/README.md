@@ -331,6 +331,8 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fc18e90-cd8c-41fb-9b49-4f0ddd729a2a)
 
 ## Lab - Deploying wordpress and mariadb multi-pod application in declarative style
+![wordpress](wordpress.png)
+
 ```
 cd ~/openshift-june-2024
 git pull
