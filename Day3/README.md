@@ -115,6 +115,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5e074c44-86ce-484c-aa32-31353a912071)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8e23db8d-89e3-4f2e-85ac-4301eaf1776c)
 
+#### Points to note
+<pre>
+- Though creating a replicaset without deployment is possible, it is not a best practice
+- Without deployment, we won't get self-healing for replicaset, hence if the replicaset is deleted all the pods will be deleted
+- the other reason, why this isn't a best practice is, we won't be able to perform rolling update as there is no deployment. Only scale up/down is possible
+- Hence, always consider using deployment
+</pre>  
 
 ## Lab - When to use oc create vs oc apply?
 <pre>
