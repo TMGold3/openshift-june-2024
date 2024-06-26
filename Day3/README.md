@@ -265,3 +265,8 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2ed057dd-9efa-4472-9f92-7ad01c35b0a5)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/754a988c-5019-4d1e-aa75-debc7d9758ce)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/85519f5d-87a2-494c-91a8-3db6e3bb48db)
+
+## Lab - Deleting a deployment from openshift webconsole
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b0d43be0-5b64-430b-903f-714ea674cd04)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b833b52d-9eda-4b07-9510-f17dd5e2e835)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2bf4915c-7724-418d-86d7-6b4a439b6bf5)
