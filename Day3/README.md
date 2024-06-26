@@ -503,5 +503,6 @@ oc logs
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f7c86bcc-d9ea-4b65-9f7b-66301465a011)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3c37703a-686c-46bc-a003-31c279f2ec68)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/61bec7db-7f6a-4033-a14a-4d54da959373)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/48bd626b-7098-45d8-b8a2-80cd84b04c71)
