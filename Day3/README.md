@@ -270,3 +270,33 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b0d43be0-5b64-430b-903f-714ea674cd04)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b833b52d-9eda-4b07-9510-f17dd5e2e835)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2bf4915c-7724-418d-86d7-6b4a439b6bf5)
+
+## Lab - Deploying mysql with Persistent Volume
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume
+cat mysql-pv.yml
+showmount -e
+oc apply -f mysql-pv.yml
+oc get persistentvolumes
+oc get persistentvolume
+oc get pv
+
+cat mysql-pvc.yml
+oc apply -f mysql-pvc.yml
+oc get persistentvolumeclaims
+oc get persistentvolumeclaim
+oc get pvc
+
+cat mysql-deploy.yml
+oc apply -f mysql-deploy.yml
+oc get deploy
+oc get po -w
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/99fd4a42-5ede-48eb-9ea7-8562ae7ceb65)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0ad4b572-2264-4878-88a2-f531c58119fb)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a7cc4773-4266-4884-a720-fb40738c7fb9)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/45b22a54-714a-4b62-8f78-b31752f255e7)
