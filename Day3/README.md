@@ -238,3 +238,23 @@ curl http://192.168.122.90:8080
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/31522aef-e3f7-4752-b601-45db57700a87)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4b9eb459-ed5b-4e16-8c6e-1cff20e2bc9a)
+
+## Lab - Rolling update in declarative style
+```
+oc get deploy
+oc get po
+oc get po/nginx-566b5879cb-pmhzb -o yaml | grep image
+cat nginx-deploy.yml| grep image
+oc apply -f nginx-deploy.yml
+oc get rs
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8968a551-f26d-4abb-8793-d0faaa2953b5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7bdbff7d-b682-4f85-a5e5-0d8551ad2c69)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9b58fb8c-e1b6-4daf-a799-3c0b11762248)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/aa2b11ab-ae73-49ee-9ff0-3966060137ac)
+
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d2312f98-09fb-4542-9a48-ddaaff2967dd)
