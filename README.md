@@ -1,5 +1,10 @@
 # Red Hat Openshift 2024 (24 June to 28 June 2024)
 
+## Installing Red Hat Openshift on your laptop
+<pre>
+https://developers.redhat.com/products/openshift-local/getting-started  
+</pre> 
+
 ## Kindly provide your first day feedback
 <pre>
 https://survey.zohopublic.com/zs/InDHab  
