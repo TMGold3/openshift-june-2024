@@ -29,6 +29,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e107fbac-8e3b-49d0-a7a6-e8982eceb60a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e4e562de-b97e-4df9-8474-00f4bb099238)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6606a937-fda4-4a12-b30d-d07bbbadf8cc)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f1812aca-fc0b-4686-8042-3b1704848a38)
 
 ## Lab - Deploying application using existing docker image
 ```
@@ -272,6 +273,29 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2bf4915c-7724-418d-86d7-6b4a439b6bf5)
 
 ## Lab - Deploying mysql with Persistent Volume
+
+#### Points to note
+<pre>
+- Persistent Volume is an external storage created by System Administrator
+- Persistent Volumes can be provisioned by System Administrators
+  - Manually ( By defining Persisten Volumes in a yaml file and apply )
+  - Dynamically ( Storage Class )
+- Persistent Volumes
+  - will have a size in MB/GB
+  - Will have AccessModes
+  - will have Storage Class (optionally)
+- Persitent volumes are available for any applications cluster-wide
+
+- Application that require external storage will have ask for storage by defining PersistentVolumeClaim
+  - Claim will have to mention
+  - What is the size required?
+  - What is the accessMode required?
+  - Storage Class ( optionally)
+  - PVC is defined by the development
+- Openshift Storage Controller will search the cluster for matching PersistentVolume as per the PersistentVolumeClaim requirement, if it finds a match then, it will let the PVC go and bound the PV and use it any application deployment
+</pre>
+
+
 ```
 cd ~/openshift-june-2024
 git pull
@@ -302,4 +326,54 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b9af9ab-8d76-43e5-aa04-7a0efd4cc238)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/886ae8fd-c93b-4ea8-904f-8ee6d7dcdc97)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b4546358-6ff7-4a06-83d0-91044b37b219)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d1990587-836e-4493-aebf-77a899f352c5)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0e5971f5-8d63-4370-a6d2-383ab027e289)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fc18e90-cd8c-41fb-9b49-4f0ddd729a2a)
+
+## Lab - Deploying wordpress and mariadb multi-pod application in declarative style
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/wordpress
+oc apply -f mariadb-pv.yml
+oc apply -f mariadb-pvc.yml
+oc apply -f mariadb-deploy.yml
+oc apply -f mariadb-svc.yml
+
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
+
+oc get po
+oc logs mariadb-5b9895469b-mqhbl
+oc logs wordpress-98c9cb676-k7hvk
+
+oc get route
+```
+
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ec8f6e48-70dd-4ea8-a4e5-a7528b89977b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ebd8a635-5f8e-4897-acfb-c1be6013c20e)
+
+Once you are done with the lab exercise, you may delete the wordpress and mariadb in the reverse order
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/wordpress
+oc delete -f wordpress-route.yml
+oc delete -f wordpress-svc.yml
+oc delete -f wordpress-deploy.yml
+oc delete -f wordpress-pvc.yml
+oc delete -f wordpress-pv.yml
+
+oc delete -f mariadb-svc.yml
+oc delete -f mariadb-deploy.yml
+oc delete -f mariadb-pvc.yml
+oc delete -f mariadb-pv.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4d188969-12c7-4f83-9b81-f8739f7b3899)
