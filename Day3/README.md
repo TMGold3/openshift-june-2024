@@ -21,6 +21,8 @@ curl http://http://openshift-june-2024-jegan.apps.ocp4.tektutor.org.labs
 ```
 
 Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/96e93ddb-e675-49c2-ba2e-e0e2220a203f)
+
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7cd5cccc-832d-421e-8421-45c447168098)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/04747539-6f13-4f31-8660-d6996abbcfa5)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fc06f716-fe60-4f29-82e4-dcefe901b910)
