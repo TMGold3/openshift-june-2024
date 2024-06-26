@@ -257,3 +257,12 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7bdbff7d-b682-4f85-a5e5-0d8551ad2c69)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9b58fb8c-e1b6-4daf-a799-3c0b11762248)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/aa2b11ab-ae73-49ee-9ff0-3966060137ac)
+
+## Lab - Declaratively deploying application from Openshift webconsole
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d2312f98-09fb-4542-9a48-ddaaff2967dd)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/07bfeb30-7c0f-4695-91f3-0e00ea36c06d)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7c577377-04ee-4ae3-bab5-510148171a72)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2ed057dd-9efa-4472-9f92-7ad01c35b0a5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/754a988c-5019-4d1e-aa75-debc7d9758ce)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8c036542-7e14-4f3f-8035-16ca9fd2f65b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/85519f5d-87a2-494c-91a8-3db6e3bb48db)
