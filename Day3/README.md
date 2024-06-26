@@ -155,3 +155,35 @@ oc get po -w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/18876cb4-04df-4c32-b789-41fd12cfeccf)
+
+## Lab - Creating clusterip internal service in declarative style
+
+First let's delete any existing deployments, replicasets, pod in declarative style
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f pod.yml
+oc delete -f nginx-rs.yml
+oc delete -f nginx-deploy.yml
+oc get all
+```
+
+Let's now create then nginx deployment in declarative style and create a clusterip internal service also in declarative style
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+
+oc create -f nginx-deploy.yml
+oc expose deploy/nginx --type=ClusterIP --port=8080 -o yaml --dry-run=client
+oc expose deploy/nginx --type=ClusterIP --port=8080 -o yaml --dry-run=client > nginx-clusterip-svc.yml
+oc create -f nginx-clusterip-svc.yml
+oc get svc
+oc get describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8afb1344-5a88-4856-b986-e613f54578d1)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/91bb435c-9db9-4404-b46b-943a219efb08)
+
