@@ -43,3 +43,21 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/42bd35ba-ad68-46d6-b17a-85a5149f0a0c)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4eba8315-9e2c-4414-a29c-5ec79547b953)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3abe9e1e-fdd2-4e8b-b1ca-136cd72679d7)
+
+## Lab - Finding list of red hat container image options available for a programming language stack
+```
+oc new-app --search java
+oc new-app --search python
+oc new-app --search dotnet
+oc new-app --search ruby
+oc new-app --search php
+oc new-app --search nodejs
+oc new-app --search angular
+oc new-app --search react
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/19ff301c-3bdc-44f6-be3a-9a6a7bee50eb)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f465d995-6a13-4f38-9da3-c0f0f654d037)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f1fec2b5-c76a-41d9-ada4-04b6197d907a)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/aed2c6de-3fa8-4251-85bc-a84f3f3bf434)
