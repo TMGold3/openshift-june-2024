@@ -81,3 +81,18 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1afd2f8a-f498-492b-9927-76d59652d341)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/700ca36f-5f09-4f6b-bd8a-d160c071b526)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/61bcd2f2-a4e2-4f58-9c7d-b2a6d2238de4)
+
+## Lab - Scale up/down deployment in declarative style
+
+You may edit the nginx-deploy.yml and update the replicas from 3 to 5, save it and apply the changes as shown below
+```
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get po
+oc get po -w
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1fac5af2-4535-4c61-96ad-77beb85fc90a)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9a2c3e23-dcc6-496d-98a1-b91d4b740977)
