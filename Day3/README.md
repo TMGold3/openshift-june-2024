@@ -272,6 +272,29 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2bf4915c-7724-418d-86d7-6b4a439b6bf5)
 
 ## Lab - Deploying mysql with Persistent Volume
+
+#### Points to note
+<pre>
+- Persistent Volume is an external storage created by System Administrator
+- Persistent Volumes can be provisioned by System Administrators
+  - Manually ( By defining Persisten Volumes in a yaml file and apply )
+  - Dynamically ( Storage Class )
+- Persistent Volumes
+  - will have a size in MB/GB
+  - Will have AccessModes
+  - will have Storage Class (optionally)
+- Persitent volumes are available for any applications cluster-wide
+
+- Application that require external storage will have ask for storage by defining PersistentVolumeClaim
+  - Claim will have to mention
+  - What is the size required?
+  - What is the accessMode required?
+  - Storage Class ( optionally)
+  - PVC is defined by the development
+- Openshift Storage Controller will search the cluster for matching PersistentVolume as per the PersistentVolumeClaim requirement, if it finds a match then, it will let the PVC go and bound the PV and use it any application deployment
+</pre>
+
+
 ```
 cd ~/openshift-june-2024
 git pull
