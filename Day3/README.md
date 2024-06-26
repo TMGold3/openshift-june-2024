@@ -96,3 +96,24 @@ oc get po
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1fac5af2-4535-4c61-96ad-77beb85fc90a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9a2c3e23-dcc6-496d-98a1-b91d4b740977)
+
+## 
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fce0098f-4ace-4a66-bda8-626065964ae6)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7a355224-e255-4c6b-812b-c7fd1631b668)
+
+
+## Lab - When to use oc create vs oc apply?
+<pre>
+- oc create should be used when the deployment doesn't exist in the cluster already 
+- once the deployment is created in the cluster, we can't use create anymore, we can only use apply
+- apply will update the delta changes done in the yml on the existing deployment resource in the openshift cluster
+</pre>
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/802244b9-53a0-47d3-add3-f70271981c6a)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5bef5385-7e3b-4679-b130-db2f8d9d5050)
+
+```
+```
