@@ -506,3 +506,14 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3c37703a-686c-46bc-a003-31c279f2ec68)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/61bec7db-7f6a-4033-a14a-4d54da959373)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/48bd626b-7098-45d8-b8a2-80cd84b04c71)
+
+## Lab - Running a one time task as an Openshift Job
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/job
+cat job.yml
+oc apply -f job.yml
+oc get jobs
+oc logs -f job/hello-job
+```
