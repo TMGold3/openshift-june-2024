@@ -238,3 +238,68 @@ curl http://192.168.122.90:8080
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/31522aef-e3f7-4752-b601-45db57700a87)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4b9eb459-ed5b-4e16-8c6e-1cff20e2bc9a)
+
+## Lab - Rolling update in declarative style
+```
+oc get deploy
+oc get po
+oc get po/nginx-566b5879cb-pmhzb -o yaml | grep image
+cat nginx-deploy.yml| grep image
+oc apply -f nginx-deploy.yml
+oc get rs
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8968a551-f26d-4abb-8793-d0faaa2953b5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d2312f98-09fb-4542-9a48-ddaaff2967dd)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7bdbff7d-b682-4f85-a5e5-0d8551ad2c69)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9b58fb8c-e1b6-4daf-a799-3c0b11762248)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/aa2b11ab-ae73-49ee-9ff0-3966060137ac)
+
+## Lab - Declaratively deploying application from Openshift webconsole
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d2312f98-09fb-4542-9a48-ddaaff2967dd)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/07bfeb30-7c0f-4695-91f3-0e00ea36c06d)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7c577377-04ee-4ae3-bab5-510148171a72)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2ed057dd-9efa-4472-9f92-7ad01c35b0a5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/754a988c-5019-4d1e-aa75-debc7d9758ce)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/85519f5d-87a2-494c-91a8-3db6e3bb48db)
+
+## Lab - Deleting a deployment from openshift webconsole
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b0d43be0-5b64-430b-903f-714ea674cd04)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b833b52d-9eda-4b07-9510-f17dd5e2e835)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2bf4915c-7724-418d-86d7-6b4a439b6bf5)
+
+## Lab - Deploying mysql with Persistent Volume
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume
+cat mysql-pv.yml
+showmount -e
+oc apply -f mysql-pv.yml
+oc get persistentvolumes
+oc get persistentvolume
+oc get pv
+
+cat mysql-pvc.yml
+oc apply -f mysql-pvc.yml
+oc get persistentvolumeclaims
+oc get persistentvolumeclaim
+oc get pvc
+
+cat mysql-deploy.yml
+oc apply -f mysql-deploy.yml
+oc get deploy
+oc get po -w
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/97bf1215-62b0-4c47-b97a-e75cacad4721)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3ce513a1-054d-4d4f-875b-36793a90e734)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/02581cef-dda5-4474-9c87-5fdbc4d8e42e)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3b9af9ab-8d76-43e5-aa04-7a0efd4cc238)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/886ae8fd-c93b-4ea8-904f-8ee6d7dcdc97)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b4546358-6ff7-4a06-83d0-91044b37b219)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0e5971f5-8d63-4370-a6d2-383ab027e289)
