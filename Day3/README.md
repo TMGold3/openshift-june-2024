@@ -483,3 +483,26 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/25185f5d-3d5f-4419-b9fb-eb1c13fd2a81)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/31fbef8c-6a0c-4c83-a682-67cdc7a9443d)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3df214fc-6708-4254-a7a6-b89586686eda)
+
+
+## Lab - Deploying mongodb with Persistent volume
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/mongodb
+cat mongodb-pv.yml
+cat mongodb-pvc.yml
+cat mongodb-deploy.yml
+oc apply -f mongodb-pv.yml
+oc apply -f mongodb-pvc.yml
+oc apply -f mongodb-deploy.yml
+oc get po -w
+oc get po
+oc logs 
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f7c86bcc-d9ea-4b65-9f7b-66301465a011)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3c37703a-686c-46bc-a003-31c279f2ec68)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/61bec7db-7f6a-4033-a14a-4d54da959373)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/48bd626b-7098-45d8-b8a2-80cd84b04c71)
