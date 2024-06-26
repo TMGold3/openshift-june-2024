@@ -297,6 +297,4 @@ oc get po -w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/99fd4a42-5ede-48eb-9ea7-8562ae7ceb65)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0ad4b572-2264-4878-88a2-f531c58119fb)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a7cc4773-4266-4884-a720-fb40738c7fb9)
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/45b22a54-714a-4b62-8f78-b31752f255e7)
+
