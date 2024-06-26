@@ -33,7 +33,13 @@ Expected output
 ```
 oc new-project jegan
 oc new-app --name=nginx --image=bitnami/nginx:latest
+oc expose svc/nginx
+oc get route
+curl http://nginx-jegan.apps.ocp4.tektutor.org.labs
 ```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5f153733-6305-412e-a2ef-3c7497287139)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/42bd35ba-ad68-46d6-b17a-85a5149f0a0c)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4eba8315-9e2c-4414-a29c-5ec79547b953)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3abe9e1e-fdd2-4e8b-b1ca-136cd72679d7)
