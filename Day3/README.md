@@ -61,3 +61,21 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f465d995-6a13-4f38-9da3-c0f0f654d037)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f1fec2b5-c76a-41d9-ada4-04b6197d907a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/aed2c6de-3fa8-4251-85bc-a84f3f3bf434)
+
+## Lab - Deploying nginx in declarative style
+```
+oc delete project jegan
+oc new-project jegan
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client > nginx-deploy.yml
+cat nginx-deploy.yml
+
+oc create -f nginx-deploy.yml
+oc get deploy,rs,po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6c6f51f5-44bc-4d9f-845b-e41c6c483811)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d9052917-3363-47ea-a969-d02a445729bc)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/28146eb6-4604-482e-9616-b5543bd499d0)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1afd2f8a-f498-492b-9927-76d59652d341)
