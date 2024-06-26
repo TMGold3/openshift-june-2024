@@ -134,3 +134,26 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/802244b9-53a0-47d3-add3-f70271981c6a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5bef5385-7e3b-4679-b130-db2f8d9d5050)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/35291af0-dc74-4fe4-ac24-cf2c82e15080)
+
+## Lab - Creating a Pod in declarative style
+Delete the existing replicaset and associated pods before proceeding
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f nginx-rs.yml
+```
+
+Let's create the pod in declarative style
+```
+cat my-pod.yml
+oc create -f my-pod.yml
+oc get po
+oc get po -w
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a2ce399c-5e42-4534-88df-9ca8858f3705)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/18876cb4-04df-4c32-b789-41fd12cfeccf)
+
+
