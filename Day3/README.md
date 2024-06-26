@@ -97,11 +97,23 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1fac5af2-4535-4c61-96ad-77beb85fc90a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9a2c3e23-dcc6-496d-98a1-b91d4b740977)
 
-## 
+## Lab - Deploying replicaset in declarative style
+```
+oc get rs
+oc get rs -o yaml
+oc get rs -o yaml > nginx-rs.yml
+vim nginx-rs.yml
+cat nginx-rs.yml
+oc create -f nginx-rs.yml
+oc get deploy
+oc get rs,po
+```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fce0098f-4ace-4a66-bda8-626065964ae6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7a355224-e255-4c6b-812b-c7fd1631b668)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5e074c44-86ce-484c-aa32-31353a912071)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8e23db8d-89e3-4f2e-85ac-4301eaf1776c)
 
 
 ## Lab - When to use oc create vs oc apply?
