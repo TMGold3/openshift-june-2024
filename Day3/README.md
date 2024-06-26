@@ -187,3 +187,27 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8afb1344-5a88-4856-b986-e613f54578d1)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/91bb435c-9db9-4404-b46b-943a219efb08)
 
+
+## Lab - Creating a nodeport external service in declarative style
+
+First we need to delete the nginx clusterip service
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/declarative-manifest-scripts
+oc delete -f nginx-clusterip-svc.yml
+oc get svc
+```
+
+Let's create the nodeport service for existing nginx deployment
+```
+oc get deploy
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client > nginx-nodeport-svc.yml
+oc create -f nginx-nodeport-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f86dd9b4-200d-475c-9820-4e82c5211a6e)
