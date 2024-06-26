@@ -331,6 +331,8 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fc18e90-cd8c-41fb-9b49-4f0ddd729a2a)
 
 ## Lab - Deploying wordpress and mariadb multi-pod application in declarative style
+![wordpress](wordpress.png)
+
 ```
 cd ~/openshift-june-2024
 git pull
@@ -377,3 +379,82 @@ oc delete -f mariadb-pv.yml
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4d188969-12c7-4f83-9b81-f8739f7b3899)
+
+## Lab - Wordpress & Mariadb Multi Pod application fetching values from configmap and secret
+#### Points to note
+<pre>
+- configmap can be used to store environment variables, tools path, etc
+- configmap stores them as key-value pair
+- the information stored in configmap should be non-sensitive in nature
+- in case, you wish to store any sensitive information like password, you can use secret for the same
+- secret also internally stores the data in the form of key-value pair just like configmap
+- secret won't reveal the value stores
+- we need to provide the values as a base64 encoded string
+</pre>
+
+
+Make sure the wordpress and mysql deployed earlier are deleted before proceeding
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/wordpress
+oc delete -f wordpress-route.yml
+oc delete -f wordpress-svc.yml
+oc delete -f wordpress-deploy.yml
+oc delete -f wordpress-pvc.yml
+oc delete -f wordpress-pv.yml
+
+oc delete -f mariadb-svc.yml
+oc delete -f mariadb-deploy.yml
+oc delete -f mariadb-pvc.yml
+oc delete -f mariadb-pv.yml
+
+cd ../mysql
+oc delete -f mysql-deploy.yml
+oc delete -f mysql-pvc.yml
+oc delete -f mysql-pv.yml
+```
+
+
+Now you may proceed deploying mariadb and wordpress as shown below
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/persistent-volume/wordpress-with-configmap-and-secret
+cat wordpress-cm.yml
+cat wordpress-secret.yml
+cat mariadb-deploy.yml
+cat wordpress-deploy.yml
+
+oc apply -f wordpress-cm.yml
+oc apply -f wordpress-secret.yml
+oc apply -f mariadb-pv.yml
+oc apply -f mariadb-pvc.yml
+oc apply -f mariadb-deploy.yml
+oc apply -f mariadb-svc.yml
+
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/71ac758f-d25f-43ac-98e9-00412b651af1)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b694883c-85c2-4bac-a22f-147f5f46b1a2)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6c637551-5a88-4a4f-b085-1f316323d07b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1fb63152-a3c0-4b12-9ceb-c72bae6f938b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/837a3e68-963b-40a7-b100-4c829ac369ff)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2a2ce229-cc6a-4c0e-93df-55433d27388b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5eaeccfc-62c3-467c-8441-f84c0529a78c)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/be4edebc-0617-4915-b416-3fd8c906283e)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4d534b94-3090-4f20-9210-db7891580036)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5adf498a-4d30-48ed-bf52-6d9aae755617)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3156bcba-d264-4ba1-85d6-5e7cd33734be)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/244cd520-3578-41c5-8613-e193a0d74463)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/47dd48b0-77b8-4914-a598-a43f4cfd37a3)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/37cbc699-4c08-484a-804d-1c3adeafca1f)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/38f58f4a-9534-4564-830b-7fd4887364bc)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/17ae51ef-4dbe-4692-8962-ba03f92e560b)
+
