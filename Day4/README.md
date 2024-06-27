@@ -179,3 +179,13 @@ nginx   nginx-jegan-devops.apps.ocp4.tektutor.org.labs   nginx      <all>   edge
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0ec6825c-75ec-4eb1-88e1-1599ee3ca285)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6ef09273-14f2-4cfc-9ecf-3f04ccf3537b)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/04a2eba4-7b8a-497f-8150-6a6e5d8ec69e)
+
+#### Points to note
+<pre>
+- Creating an edge for each deployment is a bad idea both in terms of cost implication and performance implications
+- If your monolithic application supports 100 features, when you break them into 100 microservice, you will end-up creates 100 https based edge routes
+- each edge routes will have an unique url, which means for each route you need to get a cert file from third party which will cost more
+- when the microservice to microservice communication uses https protocol, each packet that transmitted will be encrypted from the sender microservice and decrypted on the receiver microservice, this will bring down the overall application performance
+- Hence, the recommended industry standard procedure is to put a reverse proxy server with https url as the frontend for all connections that comes from internet, the reverse proxy server will use plain http protocol as they are secured inside your office network, hence no security issues and no performance penalty is expected
+- you may refer this for details https://www.redhat.com/en/blog/openshift-ecosystem-implementing-the-nginx-proxy-model-on-red-hat-openshift
+</pre>
