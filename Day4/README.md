@@ -168,3 +168,8 @@ route.route.openshift.io/nginx created
 NAME    HOST/PORT                                        PATH   SERVICES   PORT    TERMINATION   WILDCARD
 nginx   nginx-jegan-devops.apps.ocp4.tektutor.org.labs   nginx      <all>   edge          None
 </pre>
+
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7529fd23-06b5-43ea-b61d-8caee09a26fb)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0ec6825c-75ec-4eb1-88e1-1599ee3ca285)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6ef09273-14f2-4cfc-9ecf-3f04ccf3537b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/04a2eba4-7b8a-497f-8150-6a6e5d8ec69e)
