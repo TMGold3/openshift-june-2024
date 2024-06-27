@@ -245,3 +245,28 @@ The push refers to repository [openshiftjegan.jfrog.io/jegan-docker/hello-world]
 ac28800ec8bb: Layer already exists 
 1.0.0: digest: sha256:d37ada95d47ad12224c205a938129df7a3e52345828b4fa27b03a98825d1e2e7 size: 524
 </pre>
+
+## Lab - Building application, creating custom docker image and push to openshift's internal container registry
+```
+cd ~/openshift-june-2024
+git pull
+cd Day4/BuildConfig
+cat imagestream.yml
+cat buildconfig.yml
+
+oc apply -f imagestream.yml
+oc apply -f buildconfig.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/73a286a7-01e6-4209-b1e7-49266ddc82fa)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/a0117a58-7971-4b7a-b764-ed0ae88e6a40)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/189be320-d639-40a8-be41-f53578973ea7)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/05b214ce-8b7e-413e-8467-5f35a3aa5f7c)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ab43bb45-4594-4b94-b5f3-e8d394a45c7f)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/68589d51-f089-4663-9a82-a8cb6ba77185)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b4bab050-c68e-4005-a122-b449867f0778)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/761af1dd-427e-4941-b6f9-fc3db9bc9f20)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ded140bd-3ba6-4edd-a78b-6555d024f444)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/86f42501-fa37-432f-9d78-911488ed1504)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/49be7f79-0438-48f8-8be2-3667f2c5eff1)
