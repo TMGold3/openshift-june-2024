@@ -517,3 +517,39 @@ oc apply -f job.yml
 oc get jobs
 oc logs -f job/hello-job
 ```
+
+## Lab - Running recurring CronJob at a specified time
+```
+cd ~/openshift-june-2024
+git pull
+cd Day3/cronjob
+cat cronjob.yml
+oc apply -f cronjob.yml
+oc get cronjobs
+oc get po
+oc logs -f cron-job-28657823-p6bgx
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ oc apply -f cronjob.yml
+cronjob.batch/cron-job configured
+  
+jegan@tektutor.org $ oc get po -w
+NAME                      READY   STATUS      RESTARTS   AGE
+cron-job-28657815-fnqbl   0/1     Completed   0          6m56s
+hello-job-km8pg           0/1     Completed   0          47m
+pause-5df6b47b66-zjvpl    1/1     Running     0          49m
+cron-job-28657823-p6bgx   0/1     Pending     0          0s
+cron-job-28657823-p6bgx   0/1     Pending     0          0s
+cron-job-28657823-p6bgx   0/1     Pending     0          0s
+cron-job-28657823-p6bgx   0/1     ContainerCreating   0          0s
+cron-job-28657823-p6bgx   0/1     ContainerCreating   0          0s
+cron-job-28657823-p6bgx   0/1     Completed           0          3s
+cron-job-28657823-p6bgx   0/1     Completed           0          4s
+cron-job-28657823-p6bgx   0/1     Completed           0          5s
+cron-job-28657823-p6bgx   0/1     Completed           0          5s
+  
+jegan@tektutor.org $ oc logs -f cron-job-28657823-p6bgx
+Hello  
+</pre>
