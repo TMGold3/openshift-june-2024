@@ -59,10 +59,10 @@ sudo yum -y remove openssl openssl-devel
 sudo yum groupinstall 'Development Tools'
 sudo yum install perl-IPC-Cmd perl-Test-Simple -y
 cd /usr/src
-wget https://www.openssl.org/source/openssl-3.0.0.tar.gz
-tar -zxf openssl-3.0.0.tar.gz
-rm openssl-3.0.0.tar.gz
-cd /usr/src/openssl-3.0.0
+wget https://www.openssl.org/source/openssl-3.3.1.tar.gz
+tar -zxf openssl-3.3.1.tar.gz
+rm openssl-3.3.1.tar.gz
+cd /usr/src/openssl-3.3.1
 ./config
 make
 make test
