@@ -9,7 +9,7 @@ spec:
   - type: ConfigChange
   source:
     type: Git
-    git
+    git:
       uri: "https://github.com/tektutor/openshift-june-2024.git"
       ref: main
     contextDir: "Day4/buildconfig"
