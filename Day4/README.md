@@ -189,3 +189,16 @@ nginx   nginx-jegan-devops.apps.ocp4.tektutor.org.labs   nginx      <all>   edge
 - Hence, the recommended industry standard procedure is to put a reverse proxy server with https url as the frontend for all connections that comes from internet, the reverse proxy server will use plain http protocol as they are secured inside your office network, hence no security issues and no performance penalty is expected
 - you may refer this for details https://www.redhat.com/en/blog/openshift-ecosystem-implementing-the-nginx-proxy-model-on-red-hat-openshift
 </pre>
+
+## Lab - Deploying nginx as a daemonset
+```
+cd ~/openshift-june-2024
+git pull
+cd Day4/daemonset
+cat nginx-ds.yml
+oc apply -f ngins-ds.yml
+oc get po -o wide
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7a3adc19-2782-4e69-a6f2-48e3579f90ef)
