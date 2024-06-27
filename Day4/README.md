@@ -106,3 +106,65 @@ tar xvf operator-sdk-linux-x86_64.tar.gz
 mv ./operator-sdk /usr/local/bin
 operator-sdk version
 ```
+
+## Lab - Creating an edge route for nginx deployment
+
+Find your base domain of your openshift cluster
+```
+oc get ingresses.config/cluster -o jsonpath={.spec.domain}
+```
+
+Expected output
+<pre>
+[root@tektutor.org auth]# oc get ingresses.config/cluster -o jsonpath={.spec.domain}
+apps.ocp.tektutor.org.labs	
+</pre>
+
+Let's deploy a microservice and create an edge route as shown below.
+
+First, let's generate a private key
+```
+openssl genrsa -out key.key
+```
+
+We need to create a public key using the private key with specific with your organization domain
+```
+openssl req -new -key key.key -out csr.csr -subj="/CN=hello-jegan.apps.ocp.tektutor.org.labs"
+```
+
+Sign the public key using the private key and generate certificate(.crt)
+```
+openssl x509 -req -in csr.csr -signkey key.key -out crt.crt
+oc create route edge --service spring-ms --hostname hello-jegan.apps.ocp4.tektutor.org.labs --key key.key --cert crt.crt
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org edge-route]$ oc get svc
+NAME        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+spring-ms   ClusterIP   172.30.208.33   <none>        8080/TCP   87m
+[jegan@tektutor.org edge-route]$ oc expose deploy/nginx --port=8080
+service/nginx exposed
+  
+[jegan@tektutor.org edge-route]$ oc get svc
+NAME        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+nginx       ClusterIP   172.30.16.165   <none>        8080/TCP   4s
+spring-ms   ClusterIP   172.30.208.33   <none>        8080/TCP   87m
+
+[jegan@tektutor.org edge-route]$ oc get ingresses.config/cluster -o jsonpath={.spec.domain}
+apps.ocp4.tektutor.org.labs
+  
+[jegan@tektutor.org edge-route]$ oc project
+Using project "jegan-devops" on server "https://api.ocp4.tektutor.org.labs:6443".
+  
+[jegan@tektutor.org edge-route]$ openssl req -new -key key.key -out csr.csr -subj="/CN=nginx-jegan-devops.apps.ocp4.tektutor.org.labs"
+  
+[jegan@tektutor.org edge-route]$ openssl x509 -req -in csr.csr -signkey key.key -out crt.crt
+  
+[jegan@tektutor.org edge-route]$ oc create route edge --service nginx --hostname nginx-jegan-devops.apps.ocp4.tektutor.org.labs --key key.key --cert crt.crt
+route.route.openshift.io/nginx created
+  
+[jegan@tektutor.org edge-route]$ oc get route
+NAME    HOST/PORT                                        PATH   SERVICES   PORT    TERMINATION   WILDCARD
+nginx   nginx-jegan-devops.apps.ocp4.tektutor.org.labs   nginx      <all>   edge          None
+</pre>
