@@ -51,6 +51,36 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f87844f0-4290-4440-989a-c5c7e109e492)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c93a4e00-a59a-4485-9a64-114466f57b47)
 
+## Info - Installing openssl ( is already installed in our lab - just for your future reference )
+
+Installing openssl from source code ( Already installed on Lab machines, so kindly skip this installation)
+```
+sudo yum -y remove openssl openssl-devel
+sudo yum groupinstall 'Development Tools'
+sudo yum install perl-IPC-Cmd perl-Test-Simple -y
+cd /usr/src
+wget https://www.openssl.org/source/openssl-3.0.0.tar.gz
+tar -zxf openssl-3.0.0.tar.gz
+rm openssl-3.0.0.tar.gz
+cd /usr/src/openssl-3.0.0
+./config
+make
+make test
+make install
+
+sudo ln -s /usr/local/lib64/libssl.so.3 /usr/lib64/libssl.so.3
+sudo ln -s /usr/local/lib64/libcrypto.so.3 /usr/lib64/libcrypto.so.3
+
+sudo ldconfig
+sudo tee /etc/profile.d/openssl.sh<<EOF
+export PATH=/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/openssl/lib:/usr/local/openssl/lib64:$LD_LIBRARY_PATH
+EOF
+
+which openssl
+openssl version
+```
+
 ## Demo - Install Operator SDK
 ```
 su -
