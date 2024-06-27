@@ -6,7 +6,7 @@ metadata:
     name: {{.Values.pv.label}} 
 spec:
   capacity:
-    storage: {{Values.pv.mariadb_disk_size}} 
+    storage: {{.Values.pv.mariadb_disk_size}} 
   volumeMode: Filesystem
   accessModes:
   - ReadWriteMany
