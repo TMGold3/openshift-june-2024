@@ -113,7 +113,7 @@ Let's deploy nginx inside a project
 ```
 oc new-project jegan
 oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
-oc expose deploy/nginx
+oc expose deploy/nginx --port=8080
 ```
 
 Find your base domain of your openshift cluster
