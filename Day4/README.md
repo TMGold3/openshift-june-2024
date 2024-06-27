@@ -109,7 +109,7 @@ operator-sdk version
 
 ## Lab - Creating an edge route for nginx deployment
 
-Let's deploy nginx inside in a project
+Let's deploy nginx inside a project
 ```
 oc new-project jegan
 oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
