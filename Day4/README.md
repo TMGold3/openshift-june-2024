@@ -50,3 +50,29 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/77cd86dc-b3d6-4e49-a501-f4a745ab17fa)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f87844f0-4290-4440-989a-c5c7e109e492)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c93a4e00-a59a-4485-9a64-114466f57b47)
+
+## Demo - Install Operator SDK
+```
+su -
+wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
+tar xvfz go1.18.2.linux-amd64.tar.gz
+pwd
+export PATH=/root/go/bin:$PATH
+```
+
+To apply the .bashrc changes
+```
+source ~/.bashrc
+```
+
+Check the golang version
+```
+go version
+```
+Install Openshift operator SDK
+```
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/operator-sdk/4.10.12/operator-sdk-linux-x86_64.tar.gz
+tar xvf operator-sdk-linux-x86_64.tar.gz
+mv ./operator-sdk /usr/local/bin
+operator-sdk version
+```
