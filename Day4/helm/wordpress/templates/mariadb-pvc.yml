@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb-pvc-{{.Values.pv.label}}
+spec:
+  selector:
+    matchLabels:
+      name: {{.Values.pv.label}} 
+  accessModes:
+  - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: {{.Values.pv.mariadb_disk_size}} 
