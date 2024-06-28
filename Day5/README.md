@@ -304,4 +304,39 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c43ec123-409b-4cb4-8f2d-565bb9c55bd8)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/01c3a7e9-104e-4fdd-9d9a-fa1b59b196d9)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bff87680-cdd8-47b5-a841-bdef44c0ed1d)
-![Uploading image.png…]()
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/227fa63d-a7d5-435b-9c89-cf22ace3d3e4)
+
+#### Update the service
+```
+kn service update hello --env TARGET=Knative!
+kn revisions list
+```
+
+Accessing the knative application from command line
+```
+curl -k https://hello-jegan-serverless.apps.ocp4.tektutor.org.labs
+```
+
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/754f93dc-f591-4e16-9b61-2cdbf7c32e6a)
+
+
+Splitting the traffic between two revisions
+```
+kn service update hello --traffic hello-00001=50 --traffic @latest=50
+kn revisions list
+```
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/cbd07e1f-e838-41f6-a80a-edc5f8273506)
+
+
+Delete the knative service
+```
+kn service list
+kn service delete hello
+kn service list
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/48ecedc4-ef88-4124-90d2-c44ef9695171)
