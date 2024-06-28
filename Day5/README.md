@@ -67,3 +67,59 @@ We need to create a buildconfig along with the jfrog credentials in the form of 
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/cea84cc8-95d2-4718-ab4f-7bd5d53749aa)
 
 
+## Lab - Deploying hello microservice using our custom docker image from Private JFrog Docker Registry
+```
+cd ~/openshift-june-2024
+git pull
+cd Day5/buildconfig
+oc create deployment hello --image=tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:1.0 --replicas=3 -o yaml --dry-run=client
+
+oc create deployment hello --image=tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:1.0 --replicas=3 -o yaml --dry-run=client  > hello-deploy.yml
+```
+
+Update the hello-deploy to use your private-jfrog-image-registry secret as JFrog Artifactory will allow only authorized users to download and use the image from it.
+```
+cd ~/openshift-june-2024
+git pull
+cd Day5/buildconfig
+cat hello-deploy.yml
+oc apply -f hello-deploy.yml
+oc get deploy,po
+oc get po -w
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ade21be2-c7aa-42c1-98d2-0effddd49f8d)
+
+Let's create an internal service for hello microservice
+```
+oc expose deploy/hello --type=ClusterIP --port=8080 -o yaml --dry-run=client
+oc expose deploy/hello --type=ClusterIP --port=8080 -o yaml --dry-run=client > hello-svc.yml
+oc apply -f hello-svc.yml
+oc get svc
+oc describe svc/hello
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f479b8ff-1c00-41ba-8c56-f7229aa7b2f5)
+
+Let's create a route to access the hello microservice from outside the openshift cluster
+```
+oc expose svc/hello -o yaml --dry-run=client
+oc expose svc/hello -o yaml --dry-run=client > hello-route.yml
+
+cat hello-route.yml
+
+oc apply -f hello-route.yml
+oc get route
+oc describe route/hello
+```
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/fe2e6376-2bab-4c77-bc35-f8952e6865bf)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/345c8448-5047-4a87-9f71-67553c2acb0d)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b77d1875-030c-49e6-a727-cec01425f6db)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fdb992f-4d9b-4a90-9257-634448579865)
+
+
+
