@@ -122,6 +122,18 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fdb992f-4d9b-4a90-9257-634448579865)
 
 ## Lab - Rolling update - updating hello microservice to its v2.0
+When the build config file is updated, we need to apply the changes in the openshift cluster
+```
+cd ~/openshift-june-2024
+git pull
+cd Day5/buildconfig
+cat buildconfig-pushto-artifactory.yml
+oc apply -f buildconfig-pushto-artifactory.yml
+oc get buildconfigs
+oc start-build bc/hello
+```
+Once the new image v2.0 is pushed successfully to JFrog Artifactory, you can proceed as shown bellow
+
 ```
 oc set image deploy/hello hello=tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:2.0
 oc get deploy/hello -o yaml | grep image
