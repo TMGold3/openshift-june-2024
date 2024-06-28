@@ -1,4 +1,4 @@
-# Day 5
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f84608c1-9e4c-471c-8348-e2d005fb6a8b)# Day 5
 
 ## Post Test Link
 <pre>
@@ -268,4 +268,13 @@ Click on "Login with Openshift"
   - Being able to scale to zero means your code only runs when it needs to respond to an event
   - once the request is serverd, resources are release
 </pre>
+
+## Lab - Installing Red Hat OpenShift Serverless Operator as Openshift Administrator
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/24dd1417-6191-4655-9209-45354bfad194)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f66cd818-a0a0-46e6-869a-18f33f633b90)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/84313b25-54c3-4370-b498-2b39e2b7db3e)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/39bfab09-eda5-46cc-8dc6-17ef9280124f)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c5921665-c074-44db-ae57-df4aeaa42ab8)
+
+
 
