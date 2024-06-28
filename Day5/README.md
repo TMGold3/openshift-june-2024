@@ -219,8 +219,20 @@ Click on "Login with Openshift"
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3e2e3738-860d-4507-95b7-1a2df5ad7ea6)
 
 ## What makes the Serveless architecture work in Openshift or Kubernetes
+<pre>
 - You need to install OpenShift Serverless Operator
 - The Serverless Operator installs knative serverless framework
+</pre>
+
+## Knative and Red Hat Servless
+<pre>
+- Red Hat Serverless is based on Knative opensource project
+- Knative provides a serverless application layer on top of OpenShift/Kubernetes
+- Knative consists of 3 building blocks
+  - Build
+  - Eventing
+  - Serving
+</pre>  
 
 ## What does Serverless mean ?
 <pre>
