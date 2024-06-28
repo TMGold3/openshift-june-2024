@@ -121,5 +121,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b77d1875-030c-49e6-a727-cec01425f6db)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4fdb992f-4d9b-4a90-9257-634448579865)
 
+## Lab - Rolling update - updating hello microservice to its v2.0
+```
+oc set image deploy/hello hello=tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:2.0
+oc get deploy/hello -o yaml | grep image
+oc get route
+curl http://hello-jegan.apps.ocp4.tektutor.org.labs
+```
 
-
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6536c4e8-eed8-4f8f-b6db-f4962f18eb96)
