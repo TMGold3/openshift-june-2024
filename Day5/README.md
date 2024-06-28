@@ -173,3 +173,19 @@ Select "pipeline" project
 ![jenkins](jenkins13.png)
 ![jenkins](jenkins14.png)
 ![jenkins](jenkins15.png)
+
+## Lab - Deploying Jenkins using bitnami/jenkins image from Docker Hub
+```
+oc new-project jegan
+oc create deployment jenkins --image=bitnami/jenkins:latest
+oc expose deploy/jenkins --port=8080
+oc expose svc/jenkins
+oc get deploy,rs,po
+oc logs -f oc logs -f pod/jenkins-6cdb896b55-c95wg
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1aeb8e05-addf-47b6-8b21-4a8466de33d7)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/461277a0-b660-497f-aff7-d113cc089af2)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4c9117f5-944b-4784-baa7-f3265e7203a7)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/db4275e6-4bdd-4cc4-8bb3-a1e5d6f1af68)
