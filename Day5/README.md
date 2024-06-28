@@ -1,4 +1,4 @@
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f84608c1-9e4c-471c-8348-e2d005fb6a8b)# Day 5
+# Day 5
 
 ## Post Test Link
 <pre>
@@ -396,3 +396,4 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/590d13b7-beaf-4aff-8c07-71ad9bac8da8)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/384f420c-620b-4bec-9865-954f0252b5bf)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4ab8b10b-7c11-4f11-b6b4-d43d5bfdf176)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f84608c1-9e4c-471c-8348-e2d005fb6a8b)
