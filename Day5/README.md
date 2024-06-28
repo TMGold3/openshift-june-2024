@@ -190,3 +190,14 @@ Expected output
 - if any one of the stage fails, it won't trigger the next downstream jenkins job and the build will fail
 </pre>
 
+## Lab - Deploying Jenkins in Openshift via Helm
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1c1583e2-6902-4752-8a8d-f3f4dd158475)
+Click on Add
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8f688328-8353-4cd9-85bd-82d995ea6353)
+Click on Developer Catalog --> All Service
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7b0e235b-ebb7-49f2-ac15-b4b880e6d33a)
+Select CICD, search for cloud and Select Jenkins Helm
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ddd13b8f-f2c7-4d0a-8bf2-adc2ac5f9b7f)
+
+
+
