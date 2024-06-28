@@ -46,6 +46,7 @@ Click on Next button,copy the instruction in the text file and execute the pull 
 Click on Done and you will see the below page. You will notice 
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/69708040-deca-4152-b2fc-ce7882f1e3ef)
 
+
 ## Lab - Build custom image with our application binary and push the image to JFrog Artifactory Docker Registry
 
 Openshift need to login to JFrog Artifactry server in order to push the custom docker images, hence let's create a secret to store the JFrog Login Credentials in Openshift
@@ -146,7 +147,57 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5eaec459-52d0-471b-93b9-1e6cffde06e6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2f89be44-5ca0-4e60-a6ef-993fa61d3f03)
 
+## Info - What is Continuous Integration?
+<pre>
+- Jenkins - is a CI Build Server
+- We can create a Jenkins Job - to monitor code commits done in GitHub/BitBucket or any version control
+- Whenever Jenkins detects code commit in the version control, it will start the build
+- As part of the CI Build, it will first clone the latest source code from GitHub/BitBucket code repository
+- Then it will start the application build (maven build, dotnet build)
+- As part of the build, you also have to have some automated test cases which runs part of the build
+- If any test cases fails, the build will also fail
+- If code is compiling and all test cases are executed successfully then the build will succeed.
+</pre>
+
+## Info - What is Continuous Deployment?
+<pre>
+- the dev team certified CI builds, will automatically deploy the application binaries into QA environment for further automated testing
+- if all the automated test cases added by QA team succeeds then the build is good to go live in production
+- it might require some manual approvals
+</pre>
+
+## Info - What is Continuous Delivery?
+<pre>
+- the QA certified build will automatically be deployed into pre-prod environment for the customer to check and approve to decide to make them live in production  
+</pre>
+
+## Info - What is a Jenkins CI/CD Job?
+<pre>
+- could build application source and run automated test cases
+- could build custom docker images
+- could deploy application binaries to JFrog, Weblogic or JBoss
+- could deploy application into Openshift
+</pre>  
+
+## Info - What is Jenkins Pipeline?
+<pre>
+- Pipelines involves many Jenkins Job that run one after the other in sequence or in parallel
+- Pipelines consists of many Stages
+- Each Stage will have one Jenkins Job
+- When the First Stage Job succeeds it will trigger next downstream jenkins job in the pipeline
+- If the second stage Job succeeds it will trigger the next downstream jenkins job in the pipeline
+- this goes on until all the jobs complete successfully
+- if any one of the stage fails, it won't trigger the next downstream jenkins job and the build will fail
+</pre>
+
 ## Lab - Deploy Jenkins Ephemeral in your Openshift project
+Check the templates installed in your openshift cluster
+```
+oc get templates --all-namespaces | grep jenkins
+```
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8f897a8f-0730-4c7a-ab26-5f0e0a6d540f)
+
 Deploy Jenkins Ephemeral from Develop context and login to Jenkins
 ![jenkins](jenkins0.png)
 ![jenkins](jenkins1.png)
@@ -166,3 +217,21 @@ Select "pipeline" project
 ![jenkins](jenkins13.png)
 ![jenkins](jenkins14.png)
 ![jenkins](jenkins15.png)
+
+## Lab - Deploying Jenkins using bitnami/jenkins image from Docker Hub
+```
+oc new-project jegan
+oc create deployment jenkins --image=bitnami/jenkins:latest
+oc expose deploy/jenkins --port=8080
+oc expose svc/jenkins
+oc get deploy,rs,po
+oc logs -f oc logs -f pod/jenkins-6cdb896b55-c95wg
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/1aeb8e05-addf-47b6-8b21-4a8466de33d7)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/461277a0-b660-497f-aff7-d113cc089af2)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/4c9117f5-944b-4784-baa7-f3265e7203a7)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/db4275e6-4bdd-4cc4-8bb3-a1e5d6f1af68)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d224cbd6-24bd-4337-b6e9-e85cb99c96b5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/77fe7bdd-051c-467a-9969-316c8744a99a)

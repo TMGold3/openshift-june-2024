@@ -15,7 +15,7 @@ spec:
         app: hello
     spec:
       containers:
-      - image: tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:1.0
+      - image: tektutorjegan74.jfrog.io/jegan-docker/hello-spring-microservice:2.0
         name: hello
       imagePullSecrets:
       - name: private-jfrog-image-registry
