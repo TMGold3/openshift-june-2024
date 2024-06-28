@@ -58,4 +58,10 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bbac9735-7515-4b23-badd-144f70dfea05)
 
 
+We need to create a buildconfig along with the jfrog credentials in the form of pushsecret as shown below
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/e6871f46-2210-4960-a984-56391c93b2a5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b435bf82-58d1-4c91-a145-f292dc72f754)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3c1e03a4-dcbb-44a9-99dc-586415bf79dc)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5be9cfeb-945b-48c7-9730-eeab23320db5)
+
 
