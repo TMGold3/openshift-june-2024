@@ -8,7 +8,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String sayHello() {
-		return "Hello Microservice !";
+		return "Hello Microservice 2.0 !";
 	}
 
 }
