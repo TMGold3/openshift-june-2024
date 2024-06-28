@@ -1,0 +1,23 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: hello
+  labels:
+    name: hello
+spec:
+  triggers:
+  - type: ConfigChange
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/tektutor/openshift-june-2024.git"
+      ref: main
+    contextDir: "Day4/buildconfig"
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'tektutor-hello:latest'
+
+
