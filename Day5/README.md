@@ -275,6 +275,28 @@ Click on "Login with Openshift"
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/84313b25-54c3-4370-b498-2b39e2b7db3e)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/39bfab09-eda5-46cc-8dc6-17ef9280124f)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c5921665-c074-44db-ae57-df4aeaa42ab8)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bd134454-67bd-400b-9675-9879dd435bdd)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/17058bbb-4e55-4257-91eb-f6c7aa102188)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/481c8d7b-dbc7-4008-ad7b-6e4f3ba3b4b2)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/084400aa-99a0-4a47-b548-e39cb85c31ff)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/795c14e9-11ab-4ec2-af20-3a9a7d4d7df9)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ee545abe-649e-4a85-8c93-074a41513f2b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/d481df9c-a6ed-458c-854e-89183c610e05)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/247411fe-a1c6-4530-8760-dc2e8549dfb1)
 
 
+## Lab - Deploying your first knative service
+```
+kn service create hello \
+--image ghcr.io/knative/helloworld-go:latest \
+--port 8080
+--env TARGET=World
+```
 
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6e787cda-1803-455f-940b-d1f5c6a3e90b)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f94e2526-a0f6-4fea-adb7-a5675768c03a)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c43ec123-409b-4cb4-8f2d-565bb9c55bd8)
+![Uploading image.png…]()
+
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bff87680-cdd8-47b5-a841-bdef44c0ed1d)
