@@ -63,5 +63,7 @@ We need to create a buildconfig along with the jfrog credentials in the form of 
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b435bf82-58d1-4c91-a145-f292dc72f754)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3c1e03a4-dcbb-44a9-99dc-586415bf79dc)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5be9cfeb-945b-48c7-9730-eeab23320db5)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/09e08ed1-5a2f-4964-88f8-923eea448658)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/cea84cc8-95d2-4718-ab4f-7bd5d53749aa)
 
 
