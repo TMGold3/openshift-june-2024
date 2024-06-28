@@ -145,3 +145,24 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9d78bfd7-990d-4e5b-83ce-df76eaf7fcfa)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5eaec459-52d0-471b-93b9-1e6cffde06e6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2f89be44-5ca0-4e60-a6ef-993fa61d3f03)
+
+## Lab - Deploy Jenkins Ephemeral in your Openshift project
+Deploy Jenkins Ephemeral from Develop context and login to Jenkins
+![jenkins](jenkins0.png)
+![jenkins](jenkins1.png)
+![jenkins](jenkins2.png)
+![jenkins](jenkins3.png)
+![jenkins](jenkins4.png)
+
+Select "pipeline" project
+![jenkins](jenkins5.png)
+![jenkins](jenkins6.png)
+![jenkins](jenkins7.png)
+![jenkins](jenkins8.png)
+![jenkins](jenkins9.png)
+![jenkins](jenkins10.png)
+![jenkins](jenkins11.png)
+![jenkins](jenkins12.png)
+![jenkins](jenkins13.png)
+![jenkins](jenkins14.png)
+![jenkins](jenkins15.png)
