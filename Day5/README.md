@@ -2,7 +2,7 @@
 
 ## Post Test Link
 <pre>
-https://rpsconsulting116.examly.io/contest/publicU2FsdGVkX1+lj2JvRF3+bex/ua1NkTg4RWPsa3kSjTgsunMnwnzHAvmgEYl90cBn7Oz9grc0QNwV933IJwQubQ==
+https://rpsconsulting116.examly.io/contest/public?U2FsdGVkX1%20lj2JvRF3%20bex%2Fua1NkTg4RWPsa3kSjTgsunMnwnzHAvmgEYl90cBn7Oz9grc0QNwV933IJwQubQ=%3D
 </pre>
 
 ## Feedback link
