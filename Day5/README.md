@@ -218,6 +218,42 @@ Accept the default values and click on Create button
 Click on "Login with Openshift"
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3e2e3738-860d-4507-95b7-1a2df5ad7ea6)
 
+## What makes the Serveless architecture work in Openshift or Kubernetes
+- You need to install OpenShift Serverless Operator
+- The Serverless Operator installs knative serverless framework
 
+## What does Serverless mean ?
+<pre>
+- serverless doesn not mean the absence of servers
+- is an architecture model for running applications in an environment that is abstracted away from developers
+- developers can focus more on developing their application that where their code runs
+- an ideal serverless workload executes a single task
+- a function that retrieves data from a database can be an execellent serverless workload
+- serverless model is the idea of the cold start
+- when using serverless, there is a period between the request and creating the pod environment.  This period is called cold start.
+- Examples
+  - openshift serverless workloads follow this workflow
+    - a request comes in
+    - a pod is spun up to service the request
+    - the serves the request
+    - the pod is destroy when there is no user traffic to handle
+    - your service will be scaled down all the way upto 0 pod when there is 0 zero
+  - Another example of a serverless workload can be an image processing function
+    - an event could be a photo upload. The uploaded photo triggers an event to run an application to process the image
+    - For example, the application may overtext text, create a banner, or make thumbnail
+    - Once the image is stored permanently, the application has served its purpose and is no longer needed
+</pre>
 
+## Serverless Features
+<pre>
+- Stateless Function
+  - a function to query a database and return the data
+  - a function to query weather report and return the data
+- Event Driven
+  - a serverless model relies on a trigger to execute the code
+  - could be a request to an API or an event on a queue
+- Auto Scales to zero
+  - Being able to scale to zero means your code only runs when it needs to respond to an event
+  - once the request is serverd, resources are release
+</pre>
 
