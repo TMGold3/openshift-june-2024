@@ -147,6 +147,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2f89be44-5ca0-4e60-a6ef-993fa61d3f03)
 
 ## Lab - Deploy Jenkins Ephemeral in your Openshift project
+Check the templates installed in your openshift cluster
+```
+oc get templates --all-namespaces | grep jenkins
+```
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8f897a8f-0730-4c7a-ab26-5f0e0a6d540f)
+
 Deploy Jenkins Ephemeral from Develop context and login to Jenkins
 ![jenkins](jenkins0.png)
 ![jenkins](jenkins1.png)
