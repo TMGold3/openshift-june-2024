@@ -293,10 +293,15 @@ kn service create hello \
 --env TARGET=World
 ```
 
+Accessing the knative application from command line
+```
+curl -k https://hello-jegan-serverless.apps.ocp4.tektutor.org.labs
+```
+
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6e787cda-1803-455f-940b-d1f5c6a3e90b)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/f94e2526-a0f6-4fea-adb7-a5675768c03a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/c43ec123-409b-4cb4-8f2d-565bb9c55bd8)
-![Uploading image.png…]()
-
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/01c3a7e9-104e-4fdd-9d9a-fa1b59b196d9)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bff87680-cdd8-47b5-a841-bdef44c0ed1d)
+![Uploading image.png…]()
