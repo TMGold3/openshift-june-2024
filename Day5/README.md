@@ -340,3 +340,27 @@ kn service list
 
 Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/48ecedc4-ef88-4124-90d2-c44ef9695171)
+
+## Lab - Knative eventing
+
+Let's deploy a sink service
+```
+oc project jegan-serverless
+kn service create eventinghello --concurrency-target=1 --image=quay.io/rhdevelopers/eventinghello:0.0.2
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/af80d323-d397-4671-ad37-a7345d983561)
+
+Let's create an event source application
+```
+kn source ping create eventinghello-ping-source --schedule="*/2 * * * *" --data '{"message": "Thanks for your message"}' --sink ksvc:eventinghello
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b194ce5b-6a5b-4f47-9427-d64cabd1ca12)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bea18764-b175-434a-920f-91f8d0cd8964)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/803b22ec-24d7-40ab-93d9-c55d999975de)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/03310fc3-5a27-4b35-a27a-f76a5ae6dce1)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2c26ab49-a6d1-4944-9131-5e0b5e5a5d4a)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8ac58fa6-49a8-4158-8a08-0ef689f35d45)
