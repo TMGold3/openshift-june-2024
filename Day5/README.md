@@ -55,7 +55,6 @@ secret/private-jfrog-image-registry created
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/169cf3e8-d663-45f6-be73-4d5ea95b3e7f)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bbac9735-7515-4b23-badd-144f70dfea05)
 
 
