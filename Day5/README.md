@@ -1,5 +1,15 @@
 # Day 5
 
+## Post Test Link
+<pre>
+https://rpsconsulting116.examly.io/contest/publicU2FsdGVkX1+lj2JvRF3+bex/ua1NkTg4RWPsa3kSjTgsunMnwnzHAvmgEYl90cBn7Oz9grc0QNwV933IJwQubQ==
+</pre>
+
+## Feedback link
+<pre>
+https://survey.zohopublic.com/zs/M50Mel
+</pre>
+
 ## Creating a Docker Registry in your JFrog Artifactory Cloud environment
 Login to your JFrog Artifactory Cloud account
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/881eef7e-520d-4aa3-a224-a64ed03a98b0)
