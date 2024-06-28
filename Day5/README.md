@@ -46,5 +46,17 @@ Click on Next button,copy the instruction in the text file and execute the pull 
 Click on Done and you will see the below page. You will notice 
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/69708040-deca-4152-b2fc-ce7882f1e3ef)
 
+## Lab - Build custom image with our application binary and push the image to JFrog Artifactory Docker Registry
+
+Openshift need to login to JFrog Artifactry server in order to push the custom docker images, hence let's create a secret to store the JFrog Login Credentials in Openshift
+```
+oc create secret docker-registry private-jfrog-image-registry --docker-server=https://<your-jfrog-id>.jfrog.io --docker-username=<your-jfrog-registered-email> --docker-password=<your-jfrog-token>
+secret/private-jfrog-image-registry created
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/169cf3e8-d663-45f6-be73-4d5ea95b3e7f)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/bbac9735-7515-4b23-badd-144f70dfea05)
+
 
 
