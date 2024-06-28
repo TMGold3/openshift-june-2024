@@ -364,3 +364,30 @@ Expected output
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/03310fc3-5a27-4b35-a27a-f76a5ae6dce1)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2c26ab49-a6d1-4944-9131-5e0b5e5a5d4a)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8ac58fa6-49a8-4158-8a08-0ef689f35d45)
+
+## Lab - Developing a simple knative function in nodejs and deploying into Openshift cluster
+
+This will generate a basic nodejs application in your current directory
+```
+kn func create -l node
+```
+
+If you wish to build your application
+```
+kn func build
+```
+
+If you wish to run the application locally and test it
+```
+kn func run
+```
+
+Deploy the nodejs application into openshift after building it
+```
+kn func deploy -n jegan-serverless
+```
+
+Test the knative function
+```
+curl -k https://functions-jegan.apps.ocp4.tektutor.org.labs
+```
