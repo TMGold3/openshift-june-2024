@@ -130,7 +130,6 @@ curl http://hello-jegan.apps.ocp4.tektutor.org.labs
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/6536c4e8-eed8-4f8f-b6db-f4962f18eb96)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/9d78bfd7-990d-4e5b-83ce-df76eaf7fcfa)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/5eaec459-52d0-471b-93b9-1e6cffde06e6)
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2f89be44-5ca0-4e60-a6ef-993fa61d3f03)
