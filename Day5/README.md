@@ -196,8 +196,18 @@ Click on Add
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/8f688328-8353-4cd9-85bd-82d995ea6353)
 Click on Developer Catalog --> All Service
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/7b0e235b-ebb7-49f2-ac15-b4b880e6d33a)
-Select CICD, search for cloud and Select Jenkins Helm
+Search jenkins and select Jenkins Helm Charts
 ![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/ddd13b8f-f2c7-4d0a-8bf2-adc2ac5f9b7f)
+Click on Create when you see the below screen
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/0f1848b7-3ec9-4e44-81fe-9da3a89da4da)
+Accept the default values and click on Create button
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/b97a03f6-d730-48b8-84f6-be2ee87f7c4d)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/55dd4fb1-d48a-4fb4-a625-5aa879117515)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/2e5ef0e7-bd10-452c-8db2-446aaa51ef8e)
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/37365bb3-3a31-42e2-9610-e7c222e1ef34)
+Click on "Login with Openshift"
+![image](https://github.com/tektutor/openshift-june-2024/assets/12674043/3e2e3738-860d-4507-95b7-1a2df5ad7ea6)
+
 
 
 
